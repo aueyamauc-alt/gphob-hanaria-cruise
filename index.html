@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="ja" translate="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>HANARIA Bay Cruise</title>
+<meta name="robots" content="noindex">
+<meta name="google" content="notranslate">
+<meta name="description" content="グランドプリンスホテル大阪ベイから出かける、水素ハイブリッド旅客船HANARIAの大阪湾クルーズ。クルーズのみ、宿泊付きクルーズ、B.B.S.とのセットプランをご用意。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Follows the hotel site's manners: white ground, pale-grey bands, English label + Mincho heading with underline,
+   black buttons, arrow outline buttons, a booking bar overlapping the hero. Sea blue is the only HANARIA accent. */
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF;
+  --band:#F4F4F3;
+  --ink:#222222;
+  --sub:#666666;
+  --rule:#D9D9D9;
+  --gold:#A68A5B;
+  --sea:#2C6E8F;
+  --sea-pale:#E8F0F3;
+  --night:#0F1A22;
+  --f-script:"Pinyon Script",cursive;
+  --f-roman:"Cormorant Garamond","Shippori Mincho",serif;
+  --f-mincho:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --wrap:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.9;letter-spacing:.05em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3{text-wrap:balance;font-weight:500;margin:0}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:2px solid var(--sea);outline-offset:3px}
+.sp{display:none}
+@media (max-width:640px){.sp{display:inline}}
+
+/* ---------- top strip ---------- */
+.strip{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.12em}
+.strip .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:32px}
+.strip a{text-decoration:none;color:#E5D8BD}
+.strip a:hover{text-decoration:underline}
+@media (max-width:640px){.strip .r{display:none}}
+
+/* ---------- header ---------- */
+.hd{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--rule)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.mark svg{flex:none}
+.mark span{display:grid;line-height:1.1}
+.mark b{font-family:var(--f-roman);font-weight:600;font-size:22px;letter-spacing:.24em;white-space:nowrap}
+.mark small{font-family:var(--f-roman);font-weight:600;font-size:10.5px;letter-spacing:.34em;color:var(--gold);margin-top:4px;white-space:nowrap}
+.nav{display:flex;align-items:center;margin-left:auto}
+.nav a{white-space:nowrap;text-decoration:none;font-family:var(--f-mincho);font-size:14px;padding:4px 18px;border-left:1px solid var(--rule)}
+.nav a:nth-last-child(2){border-right:1px solid var(--rule)}
+.nav a:hover{color:var(--sea)}
+.nav .btn{margin-left:22px;border:0}.nav .btn .pc{margin-left:-12px}
+@media (max-width:1060px){.nav a:not(.btn){display:none}}
+@media (max-width:640px){.nav .pc{display:none}.nav .btn{padding:10px 18px;margin-left:0}.mark b{font-size:19px}.mark small{letter-spacing:.16em;font-size:9.5px}}
+
+/* ---------- language switcher (hotel style: plain list with a check) ---------- */
+.lang{position:relative;margin-left:18px}
+.lang>button{display:flex;align-items:center;gap:7px;font:inherit;font-size:13px;letter-spacing:.06em;background:none;border:1px solid var(--rule);padding:8px 12px;cursor:pointer;color:var(--ink);white-space:nowrap}
+.lang>button:hover{border-color:var(--ink)}
+.lang>button::after{content:"";width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-2px) rotate(45deg);margin-left:2px}
+.lang ul{position:absolute;right:0;top:calc(100% + 8px);list-style:none;margin:0;padding:10px 0;background:#fff;box-shadow:0 4px 22px rgba(0,0,0,.14);min-width:180px;z-index:60}
+.lang li{padding:8px 22px 8px 46px;font-size:16px;cursor:pointer;position:relative;letter-spacing:.04em;line-height:1.6}
+.lang li:hover,.lang li:focus{background:var(--band);outline:none}
+.lang li[aria-selected=true]{font-weight:700}
+.lang li[aria-selected=true]::before{content:"";position:absolute;left:20px;top:50%;width:6px;height:12px;border-right:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:translateY(-65%) rotate(45deg)}
+@media (max-width:640px){.lang{margin-left:8px}.lang>button{padding:8px 9px}.lang>button .cur{display:none}}
+.mark small i{font-style:normal}
+@media (max-width:640px){.mark .ob{display:none}}
+html[lang=en] .nav a{padding:4px 12px}
+html[lang=en] .head h2{letter-spacing:.1em;padding-left:.1em}
+html[lang=en] .hero .jp{letter-spacing:.08em;padding-left:.08em}
+html[lang=en] .hero .lead{letter-spacing:.04em}
+html[lang=zh-Hans]{--f-mincho:"Noto Serif SC","Songti SC",serif;--f-body:"Noto Sans SC","PingFang SC",sans-serif}
+html[lang=zh-Hant]{--f-mincho:"Noto Serif TC","Songti TC",serif;--f-body:"Noto Sans TC","PingFang TC",sans-serif}
+html[lang=ko]{--f-mincho:"Noto Serif KR","AppleMyungjo",serif;--f-body:"Noto Sans KR","Apple SD Gothic Neo",sans-serif}
+html[lang=ko] body{word-break:keep-all}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--f-body);font-weight:500;font-size:14px;letter-spacing:.14em;text-decoration:none;color:#fff;background:var(--ink);border:1px solid var(--ink);padding:12px 26px;cursor:pointer;transition:background .25s,color .25s}
+.btn:hover{background:#fff;color:var(--ink)}
+.btn-line{display:inline-flex;align-items:center;justify-content:space-between;gap:40px;min-width:264px;padding:14px 22px 14px 36px;border:2px solid var(--ink);background:#fff;text-decoration:none;font-size:14px;letter-spacing:.14em;transition:background .25s,color .25s;cursor:pointer;font-family:var(--f-body);color:var(--ink)}
+.btn-line::after{content:"";width:22px;height:6px;border-bottom:1px solid currentColor;border-right:1px solid currentColor;transform:skewX(50deg);transition:transform .3s}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-line:hover::after{transform:skewX(50deg) translateX(5px)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;text-align:center;min-height:min(86vh,760px);display:grid;align-items:center}
+.slides{position:absolute;inset:0;z-index:-2;background:var(--night)}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity 1.8s ease,transform 9s ease-out}
+.slides img.on{opacity:1;transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 60% 55% at 50% 46%,rgba(15,26,34,.5),rgba(15,26,34,.18) 75%),linear-gradient(180deg,rgba(15,26,34,.15),rgba(15,26,34,.45))}
+.hero .wrap{padding-block:72px 150px;display:grid;justify-items:center;width:100%}
+.dots{position:absolute;left:50%;bottom:118px;transform:translateX(-50%);display:flex;gap:10px;z-index:1}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45);transition:background .4s}
+.dots i.on{background:#fff}
+.hero .en{font-family:var(--f-script);font-size:clamp(28px,3.6vw,40px);text-shadow:0 2px 12px rgba(0,0,0,.4);line-height:1}
+.hero h1{font-family:var(--f-roman);line-height:1;text-shadow:0 2px 20px rgba(0,0,0,.35);display:grid;justify-items:center;margin-top:16px}
+.h1-main{font-weight:600;font-size:clamp(54px,10vw,120px);letter-spacing:.2em;padding-left:.2em}
+.h1-sub{display:flex;align-items:center;gap:18px;font-size:clamp(15px,2vw,22px);letter-spacing:.5em;padding-left:.5em;margin-top:16px;color:#EFE5D2}
+.h1-sub::before,.h1-sub::after{content:"";width:clamp(26px,6vw,70px);height:1px;background:currentColor;opacity:.7}
+.hero .jp{font-family:var(--f-mincho);font-size:clamp(18px,2.6vw,28px);letter-spacing:.22em;padding-left:.22em;margin-top:28px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.hero .lead{font-family:var(--f-mincho);font-size:14.5px;letter-spacing:.14em;margin-top:14px;text-shadow:0 1px 10px rgba(0,0,0,.55)}
+.wave{width:min(240px,60vw);height:22px;margin-top:22px;overflow:visible}
+.wave path{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 2.4s .4s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (max-width:560px){.hero .jp{font-size:17px;letter-spacing:.1em;padding-left:.1em}.hero .lead{font-size:13px;letter-spacing:.06em}}
+
+/* ---------- booking bar (hotel's vacancy search) ---------- */
+.bar{position:relative;z-index:2;margin-top:-96px}
+.bar-top{background:rgba(34,34,34,.9);color:#fff;font-size:13px;padding:8px 28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.bar-in{background:#fff;box-shadow:0 2px 18px rgba(0,0,0,.08);padding:22px 28px 24px}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-bottom:18px;overflow-x:auto}
+.tabs button{flex:1;min-width:max-content;font:inherit;font-family:var(--f-mincho);font-size:15px;background:none;border:0;border-bottom:2px solid transparent;padding:6px 18px 12px;cursor:pointer;color:var(--sub);letter-spacing:.1em}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--ink);font-weight:600}
+.search{display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:18px;align-items:end}
+.search label{display:grid;gap:4px;font-size:12px;color:var(--sub);font-weight:400}
+.search .btn{padding:13px 30px;white-space:nowrap}
+.tabnote{font-size:12.5px;color:var(--sub);margin-top:12px}
+@media (max-width:860px){.search{grid-template-columns:1fr 1fr}.search .btn{grid-column:1/-1}.bar-in{padding:18px 16px 20px}.bar-top{padding:8px 16px}}
+
+/* ---------- section heading ---------- */
+section{padding-block:96px}
+.band{background:var(--band)}
+.half{background:linear-gradient(180deg,var(--paper) 0 38%,var(--band) 38% 100%)}
+.head{text-align:center;display:grid;justify-items:center}
+.head .en{font-family:var(--f-script);font-size:27px;color:var(--sub);line-height:1}
+.head h2{font-family:var(--f-mincho);font-size:clamp(22px,2.8vw,29px);letter-spacing:.22em;padding:6px 0 4px .22em;border-bottom:1px solid var(--ink);margin-top:6px}
+.head .sub{color:var(--sub);margin-top:24px;max-width:46em}
+@media (max-width:640px){section{padding-block:68px}}
+
+/* ---------- concept ---------- */
+.concept-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;margin-top:56px}
+.concept-grid figure{margin:0;position:relative}
+.concept-grid img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.concept-grid h3{font-family:var(--f-mincho);font-size:clamp(21px,2.4vw,26px);letter-spacing:.14em;line-height:1.7}
+.concept-grid .body{display:grid;gap:14px;margin-top:22px;color:#444}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:28px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.feat div{padding:16px 10px;text-align:center}
+.feat div+div{border-left:1px solid var(--rule)}
+.feat b{display:block;font-family:var(--f-mincho);font-size:16px;font-weight:600}
+.feat span{font-size:12px;color:var(--sub)}
+@media (max-width:860px){.concept-grid{grid-template-columns:1fr;gap:32px}}
+
+/* ---------- plan cards (hotel "おすすめのプラン") ---------- */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:52px}
+.plan{display:flex;flex-direction:column;background:#fff;min-width:0;text-decoration:none}
+.plan .ph{overflow:hidden;aspect-ratio:4/3;position:relative}
+.plan .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.1,1)}
+.plan:hover .ph img{transform:scale(1.05)}
+.plan .no{position:absolute;left:0;top:0;background:#fff;font-family:var(--f-roman);font-weight:600;font-size:13px;letter-spacing:.24em;padding:6px 14px}
+.plan .cap{flex:1;display:flex;flex-direction:column;padding:26px 28px 30px}
+.plan .tag{font-family:var(--f-roman);font-size:13px;letter-spacing:.28em;color:var(--sea);font-weight:600}
+.plan h3{font-family:var(--f-mincho);font-size:21px;letter-spacing:.1em;margin-top:4px}
+.plan p{font-size:13.5px;color:#444;margin-top:10px;line-height:1.8}
+.plan .more{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);margin-top:auto;font-size:13px}
+.plan .more::after{content:"";width:20px;height:6px;border-bottom:1px solid currentColor;border-right:1px solid currentColor;transform:skewX(50deg);transition:transform .3s}
+.plan:hover .more::after{transform:skewX(50deg) translateX(5px)}
+.plan .pr{font-family:var(--f-mincho);font-weight:600}
+.spec{display:flex;flex-wrap:wrap;gap:6px 8px;margin:14px 0 18px;padding:0;list-style:none}
+.spec li{font-size:12px;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.08em}
+.spec li.s{background:var(--sea)}
+@media (max-width:960px){.plans{grid-template-columns:1fr;gap:24px}.plan{display:grid;grid-template-columns:42% 1fr}.plan .ph{aspect-ratio:auto;min-height:100%}}
+@media (max-width:640px){.plan{display:flex}.plan .ph{aspect-ratio:3/2;min-height:0}.plan .cap{padding:22px 20px 24px}.feat b{font-size:14px}.feat div{padding:14px 4px}}
+
+/* ---------- course times ---------- */
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:52px}
+.time{position:relative;min-height:300px;color:#fff;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.time::before{content:"";position:absolute;inset:0;z-index:-1}
+.time.d::before{background:linear-gradient(180deg,#7FB3CF 0%,#3F7FA3 55%,#1F4E6B 100%)}
+.time.s::before{background:linear-gradient(180deg,#F2C48D 0%,#D9866A 40%,#6C4A6E 78%,#2A2C4A 100%)}
+.time.n::before{background:linear-gradient(180deg,#0B1424 0%,#16263F 60%,#22395A 100%)}
+.time svg.sky{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.time .in{padding:26px 28px;width:100%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.35))}
+.time .k{font-family:var(--f-roman);font-weight:600;font-size:13px;letter-spacing:.3em;opacity:.9}
+.time h3{font-family:var(--f-mincho);font-size:22px;letter-spacing:.12em;margin-top:2px}
+.time p{font-size:13.5px;margin-top:8px;opacity:.92;line-height:1.8}
+.time .hr{display:inline-block;margin-top:12px;border:1px solid rgba(255,255,255,.75);padding:1px 12px;font-size:12.5px;letter-spacing:.12em}
+@media (max-width:860px){.times{grid-template-columns:1fr}.time{min-height:220px}}
+
+/* ---------- plan detail blocks ---------- */
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:52px;background:#fff}
+.detail.rev .dimg{order:2}
+.dimg{position:relative;min-height:420px}
+.dimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dimg figcaption{position:absolute;left:0;bottom:0;background:#fff;font-family:var(--f-mincho);font-size:13px;padding:6px 16px}
+.dtxt{padding:52px 56px}
+.dtxt .tag{font-family:var(--f-roman);font-size:13px;letter-spacing:.28em;color:var(--sea);font-weight:600}
+.dtxt h3{font-family:var(--f-mincho);font-size:clamp(21px,2.4vw,25px);letter-spacing:.12em;margin-top:4px;line-height:1.6}
+.dtxt > p{color:#444;margin-top:16px}
+.steps{list-style:none;padding:0;margin:26px 0 0;border-top:1px solid var(--ink)}
+.steps li{display:grid;grid-template-columns:5.6em 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.steps b{font-family:var(--f-mincho);font-weight:600;color:var(--sea);letter-spacing:.06em}
+.steps .day{display:block;grid-column:1/-1;background:var(--band);font-family:var(--f-roman);font-weight:600;letter-spacing:.3em;font-size:13px;padding:4px 12px;color:var(--ink)}
+.steps li.dayrow{padding:10px 0 0;border-bottom:0;display:block}
+.dtxt .btn-line{margin-top:30px}
+.small{font-size:12.5px;color:var(--sub);margin-top:16px;line-height:1.8}
+@media (max-width:860px){.detail{grid-template-columns:1fr}.detail.rev .dimg{order:0}.dimg{min-height:0;aspect-ratio:3/2}.dtxt{padding:34px 22px 38px}}
+
+/* ---------- gallery ---------- */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:230px 230px;gap:8px;margin-top:52px}
+.gallery figure{margin:0;position:relative;overflow:hidden;min-width:0}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.1,1)}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figure:first-child{grid-row:span 2}
+.gallery figcaption{position:absolute;left:0;bottom:0;background:#fff;font-family:var(--f-mincho);font-size:13px;padding:6px 16px}
+@media (max-width:860px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 150px 150px}.gallery figure:first-child{grid-column:span 2;grid-row:auto}}
+
+/* ---------- price table ---------- */
+.ptable{margin:52px auto 0;max-width:980px;border-collapse:collapse;width:100%;background:#fff;font-size:14.5px}
+.ptable th,.ptable td{border-bottom:1px solid var(--rule);padding:18px 20px;text-align:left;vertical-align:middle}
+.ptable thead th{background:var(--ink);color:#fff;font-weight:500;font-size:13px;letter-spacing:.14em}
+.ptable tbody th{font-family:var(--f-mincho);font-weight:600;font-size:16px;width:34%}
+.ptable tbody th small{display:block;font-family:var(--f-body);font-weight:400;font-size:12px;color:var(--sub)}
+.ptable .tbd{font-family:var(--f-roman);font-weight:600;letter-spacing:.24em;color:var(--sea);font-size:15px}
+.ptable td.inc{font-size:13.5px;color:#444}
+@media (max-width:700px){.ptable thead{display:none}.ptable tr{display:grid;padding:14px 16px;border-bottom:1px solid var(--rule)}.ptable th,.ptable td,.ptable tbody th{border:0;padding:2px 0;width:auto}}
+.pnote{max-width:980px;margin:20px auto 0;font-size:12.5px;color:var(--sub);display:grid;gap:4px}
+
+/* ---------- partner banners (ad style) ---------- */
+.ads{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:52px}
+.ad{position:relative;display:block;min-height:280px;overflow:hidden;color:#fff;text-decoration:none;isolation:isolate}
+.ad img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s cubic-bezier(.2,.7,.1,1)}
+.ad:hover img{transform:scale(1.05)}
+.ad::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,14,20,.86) 0%,rgba(10,14,20,.62) 55%,rgba(10,14,20,.3))}
+.ad .in{padding:34px 36px;display:flex;flex-direction:column;height:100%;min-height:280px}
+.ad .lbl{align-self:flex-start;font-size:11px;letter-spacing:.24em;border:1px solid rgba(255,255,255,.7);padding:1px 10px}
+.ad .sc{font-family:var(--f-script);font-size:24px;margin-top:18px;line-height:1;color:#EFE5D2}
+.ad h3{font-family:var(--f-mincho);font-size:clamp(20px,2.4vw,25px);letter-spacing:.12em;margin-top:6px;line-height:1.5}
+.ad p{font-size:13.5px;margin-top:8px;opacity:.92;max-width:28em}
+.ad .go{margin-top:auto;padding-top:22px;display:inline-flex;align-items:center;gap:16px;font-size:13.5px;letter-spacing:.14em}
+.ad .go::after{content:"";width:22px;height:6px;border-bottom:1px solid currentColor;border-right:1px solid currentColor;transform:skewX(50deg);transition:transform .3s}
+.ad:hover .go::after{transform:skewX(50deg) translateX(6px)}
+@media (max-width:860px){.ads{grid-template-columns:1fr}.ad .in{padding:26px 22px}}
+.mini-ads{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.mini-ads a{display:inline-flex;align-items:center;gap:10px;font-size:13px;border:1px solid var(--rule);background:#fff;padding:8px 16px;text-decoration:none}
+.mini-ads a:hover{border-color:var(--ink)}
+
+/* ---------- access ---------- */
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:52px;align-items:start}
+.access-grid img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.adl{display:grid;grid-template-columns:7em 1fr;margin:0;border-top:1px solid var(--ink)}
+.adl dt,.adl dd{margin:0;padding:15px 0;border-bottom:1px solid var(--rule);font-size:14.5px}
+.adl dt{font-family:var(--f-mincho);font-weight:600}
+@media (max-width:760px){.access-grid{grid-template-columns:1fr;gap:28px}.adl{grid-template-columns:5.8em 1fr}}
+
+/* ---------- faq ---------- */
+.faq-list{margin:52px auto 0;max-width:980px;display:grid;gap:10px}
+.faq-list details{background:var(--band)}
+.faq-list summary{list-style:none;cursor:pointer;padding:20px 56px 20px 24px;position:relative;font-size:15.5px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::before{content:"Q.";font-family:var(--f-roman);font-weight:600;font-size:19px;color:var(--sea);margin-right:12px}
+.faq-list summary::after{content:"";position:absolute;right:26px;top:50%;width:9px;height:9px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transform:translateY(-70%) rotate(45deg);transition:transform .3s}
+.faq-list details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq-list p{padding:0 24px 22px 56px;color:#444;font-size:14.5px}
+
+/* ---------- form ---------- */
+.form-box{max-width:820px;margin:52px auto 0;background:#fff;padding:44px 48px}
+form{display:grid;gap:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:grid;gap:6px;font-size:13px;font-weight:500}
+label .req{color:var(--sea);font-size:11px;margin-left:6px}
+input,select,textarea{font:inherit;font-size:15px;color:var(--ink);background:#fff;border:1px solid #BBBBBB;padding:11px 12px;border-radius:0;width:100%;min-width:0}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink)}
+.privacy{background:var(--band);padding:0 18px;font-size:13px}
+.privacy summary{cursor:pointer;padding:12px 0}
+.privacy p{padding-bottom:14px;color:#444;line-height:1.8}
+.agree{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:400;font-size:14px}
+.agree input{width:auto;accent-color:var(--ink)}
+form .btn{justify-self:center;min-width:260px;margin-top:6px;padding:15px 30px}
+.done{border:1px solid var(--ink);padding:16px;text-align:center;font-family:var(--f-mincho)}
+.done.err{border-color:#B5523B;color:#B5523B}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media (max-width:560px){.row{grid-template-columns:1fr}.form-box{padding:30px 18px}}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--ink);padding-block:44px 36px;font-size:12.5px;color:var(--sub)}
+.ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:flex-start}
+.ft dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0}
+.ft dt{font-family:var(--f-mincho);font-weight:600;color:var(--gold)}
+.ft dd{margin:0;color:var(--ink)}
+.ft .links{display:grid;gap:6px}
+.ft .links a{text-underline-offset:4px;color:var(--ink)}
+.copy{margin-top:28px;text-align:center;font-family:var(--f-roman);letter-spacing:.2em}
+
+/* ---------- reveal ---------- */
+.rv{transition:transform 1s cubic-bezier(.2,.7,.1,1)}
+.js .rv.pre{transform:translateY(24px)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .js .rv.pre{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="strip"><div class="wrap"><span>グランドプリンスホテル大阪ベイから出かける、<br class="sp">大阪湾クルーズ</span><span class="r"><a href="https://www.princehotels.co.jp/osakabay/" target="_blank" rel="noopener">ホテル公式サイト ↗</a></span></div></div>
+<header class="hd">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="HANARIA Bay Cruise トップへ">
+      <svg width="40" height="24" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 15c4-4 8-4 12 0s8 4 12 0 8-4 12 0" fill="none" stroke="#2C6E8F" stroke-width="1.3"/><path d="M2 21c4-4 8-4 12 0s8 4 12 0 8-4 12 0" fill="none" stroke="#A68A5B" stroke-width="1"/><path d="M12 10 20 2l8 8" fill="none" stroke="#222" stroke-width="1"/></svg>
+      <span><b>HANARIA</b><small>BAY CRUISE<i class="ob"> ・ OSAKA BAY</i></small></span>
+    </a>
+    <nav class="nav" aria-label="ページ内メニュー">
+      <a href="#plans">プラン一覧</a>
+      <a href="#cruise">クルーズ</a>
+      <a href="#stay">宿泊付き</a>
+      <a href="#bbs">B.B.S.セット</a>
+      <a href="#price">料金</a>
+      <a href="#faq">よくある質問</a>
+      <a class="btn" href="#reserve">予約<span class="pc">・お問い合わせ</span></a>
+    </nav>
+    <div class="lang">
+      <button type="button" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Language"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor"/><path d="M1.5 8h13M8 1.5c2 2 2.8 4.2 2.8 6.5S10 12.5 8 14.5M8 1.5C6 3.5 5.2 5.7 5.2 8S6 12.5 8 14.5" fill="none" stroke="currentColor"/></svg><span class="cur" id="lang-cur">日本語</span></button>
+      <ul id="lang-list" role="listbox" aria-label="Language" hidden>
+        <li role="option" tabindex="-1" data-l="ja" aria-selected="true">日本語</li>
+        <li role="option" tabindex="-1" data-l="en" aria-selected="false">English</li>
+        <li role="option" tabindex="-1" data-l="zh-Hans" aria-selected="false">簡体中文</li>
+        <li role="option" tabindex="-1" data-l="zh-Hant" aria-selected="false">繁体中文</li>
+        <li role="option" tabindex="-1" data-l="ko" aria-selected="false">한국어</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-block:0">
+  <div class="slides" aria-hidden="true">
+    <img class="on" src="img/hanaria-main.jpg" alt="" style="object-position:50% 55%">
+    <img src="img/hanaria-wide.jpg" alt="" style="object-position:50% 50%">
+    <img src="img/hanaria-bay.jpg" alt="" style="object-position:50% 40%">
+  </div>
+  <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+  <div class="wrap">
+    <p class="en">Osaka Bay Cruise</p>
+    <h1><span class="h1-main">HANARIA</span><span class="h1-sub">BAY CRUISE</span></h1>
+    <svg class="wave" viewBox="0 0 240 22" aria-hidden="true"><path d="M0 11c20-12 40-12 60 0s40 12 60 0 40-12 60 0 40 12 60 0" fill="none" stroke="#fff" stroke-width="1" opacity=".85"/></svg>
+    <p class="jp">海辺のホテルから、<br class="sp">水素の船で大阪湾へ。</p>
+    <p class="lead">グランドプリンスホテル大阪ベイのご滞在に、<br class="sp">次世代旅客船 HANARIA のクルーズを。</p>
+  </div>
+</section>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="bar-top"><span>料金・運航日は近日発表</span><span>ただいま先行でお問い合わせを受け付けています</span></div>
+    <div class="bar-in">
+      <div class="tabs" role="tablist" aria-label="プランの種類">
+        <button role="tab" aria-selected="true" data-plan="cruise">クルーズのみ</button>
+        <button role="tab" aria-selected="false" data-plan="stay">宿泊付きクルーズ</button>
+        <button role="tab" aria-selected="false" data-plan="bbs">B.B.S.×クルーズ</button>
+      </div>
+      <div class="search">
+        <label for="q-date">ご希望日<input id="q-date" type="date"></label>
+        <label for="q-time">時間帯<select id="q-time"><option value="指定なし">指定なし</option><option value="デイクルーズ">デイクルーズ</option><option value="サンセットクルーズ">サンセットクルーズ</option><option value="ナイトクルーズ">ナイトクルーズ</option></select></label>
+        <label for="q-ppl">人数<select id="q-ppl"><option value="1名">1名</option><option value="2名" selected>2名</option><option value="3名">3名</option><option value="4名">4名</option><option value="5〜9名">5〜9名</option><option value="10名以上">10名以上</option></select></label>
+        <button class="btn" type="button" id="q-go">空き状況を問い合わせる</button>
+      </div>
+      <p class="tabnote" id="q-note">ホテルにご宿泊でない方も、クルーズのみでご予約いただけます。</p>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="head rv"><p class="en">About HANARIA</p><h2>HANARIA について</h2></div>
+    <div class="concept-grid">
+      <figure class="rv"><img src="img/hanaria-side.jpg" alt="大阪湾に浮かぶ白い双胴船 HANARIA"></figure>
+      <div class="rv">
+        <h3>静かに、なめらかに。<br>水素と電気で走る、次世代の旅客船。</h3>
+        <div class="body">
+          <p>HANARIA は、水素燃料電池とバッテリーを組み合わせて走るハイブリッド旅客船です。エンジン音や振動が少なく、海と街の景色を静かに味わえます。</p>
+          <p>ホテルのすぐ近く、南港から大阪湾へ。昼の青い海、夕暮れの空、ベイエリアの夜景。ご滞在のどの時間にも、海の上のひとときを添えます。</p>
+        </div>
+        <div class="feat">
+          <div><b>水素ハイブリッド</b><span>静かでなめらかな航行</span></div>
+          <div><b>双胴船</b><span>揺れにくい船体</span></div>
+          <div><b>約60分</b><span>大阪湾をめぐる</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="half" id="plans">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Plans</p><h2>おすすめのプラン</h2>
+      <p class="sub">ご滞在のスタイルにあわせて、3つのプランからお選びいただけます。</p></div>
+    <div class="plans">
+      <a class="plan rv" href="#cruise">
+        <div class="ph"><img src="img/hanaria-wide.jpg" alt="海上を進む HANARIA"><span class="no">PLAN 01</span></div>
+        <div class="cap">
+          <span class="tag">CRUISE ONLY</span>
+          <h3>クルーズのみ</h3>
+          <p>ご宿泊の方も、ご宿泊でない方も。気軽に乗れる約60分の大阪湾クルーズです。</p>
+          <ul class="spec"><li>約60分</li><li>デイ／サンセット／ナイト</li></ul>
+          <span class="more"><span>料金 <span class="pr">近日発表</span></span></span>
+        </div>
+      </a>
+      <a class="plan rv" href="#stay">
+        <div class="ph"><img src="img/venue-hotel.jpg" alt="夜のグランドプリンスホテル大阪ベイ"><span class="no">PLAN 02</span></div>
+        <div class="cap">
+          <span class="tag">STAY &amp; CRUISE</span>
+          <h3>宿泊付きクルーズ</h3>
+          <p>グランドプリンスホテル大阪ベイのご宿泊とクルーズをひとつに。お申し込みからご案内まで、まとめて手配します。</p>
+          <ul class="spec"><li class="s">ご宿泊</li><li>クルーズ</li><li>1泊〜</li></ul>
+          <span class="more"><span>料金 <span class="pr">近日発表</span></span></span>
+        </div>
+      </a>
+      <a class="plan rv" href="#bbs">
+        <div class="ph"><img src="img/venue-main.jpg" alt="LEDビジョンに囲まれた B.B.S. のダイニング"><span class="no">PLAN 03</span></div>
+        <div class="cap">
+          <span class="tag">B.B.S. &amp; CRUISE</span>
+          <h3>B.B.S.×クルーズ セット</h3>
+          <p>ホテル地下1階の B.B.S. で、大型LEDに包まれるダイニングとエンターテインメント。海の上と、光の中と、ふたつの体験を一晩で。</p>
+          <ul class="spec"><li class="s">B.B.S.</li><li>クルーズ</li><li>ご宿泊の追加も可</li></ul>
+          <span class="more"><span>料金 <span class="pr">近日発表</span></span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="cruise">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Cruise</p><h2>クルーズのご案内</h2>
+      <p class="sub">時間帯によって、同じ海がまったく違う表情を見せます。運航時刻・運航日は販売開始時にご案内します。</p></div>
+    <div class="times">
+      <article class="time d rv">
+        <svg class="sky" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><circle cx="320" cy="56" r="28" fill="#FFF7DC" opacity=".85"/><path d="M0 210c40-8 80-8 120 0s80 8 120 0 80-8 120 0 40 4 40 4V300H0z" fill="#fff" opacity=".12"/></svg>
+        <div class="in"><span class="k">DAY CRUISE</span><h3>デイクルーズ</h3><p>光る水面と青い空。開放的なデッキで、潮風とともに大阪湾をめぐります。</p><span class="hr">お昼の時間帯（予定）</span></div>
+      </article>
+      <article class="time s rv">
+        <svg class="sky" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><circle cx="320" cy="56" r="26" fill="#FFD9A0" opacity=".9"/><rect x="0" y="230" width="400" height="104" fill="#2A2C4A" opacity=".55"/></svg>
+        <div class="in"><span class="k">SUNSET CRUISE</span><h3>サンセットクルーズ</h3><p>海に沈む夕日を、さえぎるもののない船上から。大阪湾がもっとも美しく染まる時間です。</p><span class="hr">夕方の時間帯（予定）</span></div>
+      </article>
+      <article class="time n rv">
+        <svg class="sky" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="#fff"><circle cx="60" cy="40" r="1.2"/><circle cx="140" cy="70" r="1"/><circle cx="250" cy="30" r="1.4"/><circle cx="330" cy="60" r="1"/><circle cx="380" cy="24" r="1.2"/></g><g fill="#F3C977" opacity=".35" transform="translate(0,-60)"><rect x="20" y="170" width="14" height="40"/><rect x="40" y="150" width="10" height="60"/><rect x="60" y="180" width="18" height="30"/><rect x="250" y="140" width="12" height="70"/><rect x="268" y="165" width="20" height="45"/><rect x="300" y="155" width="10" height="55"/><rect x="340" y="175" width="22" height="35"/></g><rect x="0" y="210" width="400" height="90" fill="#0B1424" opacity=".7"/></svg>
+        <div class="in"><span class="k">NIGHT CRUISE</span><h3>ナイトクルーズ</h3><p>ベイエリアの灯りと、海の上の静けさ。ご夕食のあとの特別なひとときに。</p><span class="hr">夜の時間帯（予定）</span></div>
+      </article>
+    </div>
+    <div class="gallery">
+      <figure class="rv"><img src="img/hanaria-main.jpg" alt="波を立てて進む HANARIA の正面"><figcaption>HANARIA</figcaption></figure>
+      <figure class="rv"><img src="img/hanaria-cabin.jpg" alt="ステンドグラス調の窓がある客室"><figcaption>客室（イメージ）</figcaption></figure>
+      <figure class="rv"><img src="img/hanaria-deck.jpg" alt="ウッドデッキの屋外デッキ"><figcaption>デッキ（イメージ）</figcaption></figure>
+      <figure class="rv"><img src="img/hanaria-bow.jpg" alt="HANARIA の船首"><figcaption>船首</figcaption></figure>
+      <figure class="rv"><img src="img/hanaria-bay.jpg" alt="上空から見た航行中の HANARIA"><figcaption>大阪湾を航行</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="stay">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Stay &amp; Cruise</p><h2>宿泊付きクルーズ</h2>
+      <p class="sub">ホテルのご宿泊とクルーズを組み合わせた旅行プランです。旅行業務取扱管理者のいる当社が、ご宿泊とクルーズをまとめて手配します。</p></div>
+    <div class="detail rv">
+      <figure class="dimg" style="margin:0"><img src="img/venue-hotel.jpg" alt="大阪湾沿いに建つグランドプリンスホテル大阪ベイの夜景"><figcaption>グランドプリンスホテル大阪ベイ</figcaption></figure>
+      <div class="dtxt">
+        <span class="tag">MODEL PLAN ・ 1泊2日</span>
+        <h3>夕日の海から、<br>海辺のホテルの夜へ。</h3>
+        <p>チェックイン後にサンセットクルーズへ。夕暮れの大阪湾を楽しんだあとは、ホテルでゆっくりお過ごしください。</p>
+        <ol class="steps">
+          <li class="dayrow"><span class="day">DAY 1</span></li>
+          <li><b>午後</b><span>ホテルにチェックイン</span></li>
+          <li><b>夕方</b><span>乗り場へ移動し、サンセットクルーズ（約60分）</span></li>
+          <li><b>夜</b><span>ホテルのレストランでご夕食（オプション予定）／客室でおくつろぎ</span></li>
+          <li class="dayrow"><span class="day">DAY 2</span></li>
+          <li><b>朝</b><span>ご朝食（プランにより異なります）</span></li>
+          <li><b>午前</b><span>チェックアウト</span></li>
+        </ol>
+        <p class="small">※ 行程はモデルプランです。クルーズの時間帯（デイ／サンセット／ナイト）や、チェックアウト日のクルーズもお選びいただける予定です。<br>※ 対象客室・お食事の内容・料金は、販売開始時にご案内します。</p>
+        <a class="btn-line" href="#reserve" data-pick="stay">宿泊付きプランを問い合わせる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bbs">
+  <div class="wrap">
+    <div class="head rv"><p class="en">B.B.S. &amp; Cruise</p><h2>B.B.S.×クルーズ セット</h2>
+      <p class="sub">B.B.S. は、グランドプリンスホテル大阪ベイの地下1階にある、大型LED映像設備を備えたイベント・ダイニングスペース。光と映像の空間と、海の上の時間を、ひとつのプランでお楽しみいただけます。</p></div>
+    <div class="detail rev rv">
+      <figure class="dimg" style="margin:0"><img src="img/venue-led4.jpg" alt="海の映像を映した4面LEDのステージ"><figcaption>B.B.S. 4面LEDステージ</figcaption></figure>
+      <div class="dtxt">
+        <span class="tag">ONE NIGHT ・ TWO STAGES</span>
+        <h3>光に包まれるダイニングと、<br>夜の海をひとつに。</h3>
+        <p>ステージの正面・左右・床面をLEDビジョンが囲む B.B.S. で、映像演出とともにお食事やイベントを。そのあと（または前に）HANARIA で大阪湾へ。</p>
+        <ol class="steps">
+          <li><b>STEP 1</b><span>B.B.S.（ホテル地下1階）でダイニング・エンターテインメント</span></li>
+          <li><b>STEP 2</b><span>乗り場へ移動</span></li>
+          <li><b>STEP 3</b><span>HANARIA でクルーズ（約60分）</span></li>
+          <li><b>OPTION</b><span>ホテルのご宿泊を追加して、そのままお泊まりに</span></li>
+        </ol>
+        <p class="small">※ 実施日・内容（お食事・イベント）・料金は、販売開始時にご案内します。順番は実施日によって変わる場合があります。</p>
+        <a class="btn-line" href="#reserve" data-pick="bbs">セットプランを問い合わせる</a>
+      </div>
+    </div>
+    <div class="gallery" style="grid-template-rows:200px 200px">
+      <figure class="rv"><img src="img/venue-main.jpg" alt="夕焼けの映像を映したLEDとダイニング席"><figcaption>メインフロア</figcaption></figure>
+      <figure class="rv"><img src="img/bbs-dining.jpg" alt="B.B.S. の客席とバーカウンター"><figcaption>客席</figcaption></figure>
+      <figure class="rv"><img src="img/venue-lounge.jpg" alt="照明に照らされたバーカウンター"><figcaption>バーカウンター</figcaption></figure>
+      <figure class="rv"><img src="img/scene-live.jpg" alt="LEDに囲まれたステージでのライブ"><figcaption>イベント開催時</figcaption></figure>
+      <figure class="rv"><img src="img/venue-buffet.jpg" alt="ホテルシェフの料理"><figcaption>ホテルシェフの料理</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="price">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Price</p><h2>料金</h2>
+      <p class="sub">料金は現在調整中です。決まり次第、このページでお知らせします。</p></div>
+    <table class="ptable rv">
+      <thead><tr><th scope="col">プラン</th><th scope="col">料金（お一人様・税込）</th><th scope="col">含まれるもの</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">クルーズのみ<small>デイ／サンセット／ナイト</small></th><td><span class="tbd">COMING SOON</span></td><td class="inc">クルーズ乗船（約60分）</td></tr>
+        <tr><th scope="row">宿泊付きクルーズ<small>1泊2日〜</small></th><td><span class="tbd">COMING SOON</span></td><td class="inc">ご宿泊＋クルーズ乗船（お食事はプランにより異なります）</td></tr>
+        <tr><th scope="row">B.B.S.×クルーズ セット<small>宿泊の追加も可</small></th><td><span class="tbd">COMING SOON</span></td><td class="inc">B.B.S. でのダイニング・イベント＋クルーズ乗船</td></tr>
+      </tbody>
+    </table>
+    <div class="pnote">
+      <p>※ 小児料金・団体料金・貸切（チャーター）については、お問い合わせください。</p>
+      <p>※ 天候・海象により欠航する場合があります。欠航時の取り扱い、取消料は販売開始時にご案内します。</p>
+    </div>
+  </div>
+</section>
+
+<section id="partners">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Partner Sites</p><h2>あわせてご覧ください</h2></div>
+    <div class="ads">
+      <a class="ad rv" href="https://www.princehotels.co.jp/osakabay/" target="_blank" rel="noopener">
+        <img src="img/venue-hotel.jpg" alt="">
+        <div class="in">
+          <span class="lbl">OFFICIAL SITE</span>
+          <p class="sc">Hotel</p>
+          <h3>グランドプリンスホテル大阪ベイ</h3>
+          <p>大阪湾に面したアーバンリゾートホテル。客室・レストラン・ご宿泊プランは、ホテル公式サイトでご覧いただけます。</p>
+          <span class="go">ホテル公式サイトへ ↗</span>
+        </div>
+      </a>
+      <a class="ad rv" href="https://bbs-eventdining.com/" target="_blank" rel="noopener">
+        <img src="img/venue-main.jpg" alt="">
+        <div class="in">
+          <span class="lbl">OFFICIAL SITE</span>
+          <p class="sc">Event Dining</p>
+          <h3>B.B.S. Event Dining</h3>
+          <p>ホテル地下1階、大型LED映像設備を備えた貸切イベント・ダイニングスペース。イベント情報や会場の詳細はこちら。</p>
+          <span class="go">B.B.S. 公式サイトへ ↗</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="access">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Access</p><h2>アクセス</h2></div>
+    <div class="access-grid">
+      <img class="rv" src="img/hanaria-side.jpg" alt="岸壁近くを進む HANARIA">
+      <dl class="adl rv">
+        <dt>ホテル</dt><dd>グランドプリンスホテル大阪ベイ<br>〒559-0034 大阪府大阪市住之江区南港北1-13-11</dd>
+        <dt>電車</dt><dd>大阪メトロ ニュートラム「中ふ頭」駅 2番出口から徒歩約3分</dd>
+        <dt>B.B.S.</dt><dd>ホテル 地下1階</dd>
+        <dt>乗船場所</dt><dd>南港エリアの乗り場を予定しています。詳しい場所と集合時刻は、ご予約確定時にご案内します。</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head rv"><p class="en">FAQ</p><h2>よくあるご質問</h2></div>
+    <div class="faq-list">
+      <details><summary>ホテルに宿泊しなくてもクルーズに乗れますか？</summary><p>はい。「クルーズのみ」プランは、ご宿泊の有無にかかわらずご利用いただけます。</p></details>
+      <details><summary>宿泊付きクルーズはどこが販売していますか？</summary><p>ご宿泊とクルーズを組み合わせた旅行プランとして、株式会社ユニバーサルクルーズが企画・手配します。旅行条件は販売開始時に掲載します。</p></details>
+      <details><summary>雨の日や海が荒れている日はどうなりますか？</summary><p>安全のため、天候・海象によって欠航する場合があります。欠航が決まった場合はご連絡し、取り扱いをご案内します。</p></details>
+      <details><summary>子ども連れでも乗れますか？</summary><p>お子様もご乗船いただけます。年齢ごとの料金やご注意事項は、販売開始時にご案内します。</p></details>
+      <details><summary>船の中で飲食はできますか？</summary><p>船内での飲食の提供内容は、プランごとに販売開始時にご案内します。</p></details>
+      <details><summary>グループや貸切で利用できますか？</summary><p>ご相談を承ります。下のフォームから「貸切・団体のご相談」をお選びください。</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="reserve">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Reservation</p><h2>予約・お問い合わせ</h2>
+      <p class="sub">ただいま先行でお問い合わせを受け付けています。内容を確認のうえ、担当者からご連絡します。</p></div>
+    <div class="form-box rv">
+      <form id="rf" novalidate>
+        <div class="row">
+          <label for="f-plan">ご希望のプラン<span class="req">必須</span>
+            <select id="f-plan" name="plan">
+              <option value="cruise">クルーズのみ</option>
+              <option value="stay">宿泊付きクルーズ</option>
+              <option value="bbs">B.B.S.×クルーズ セット</option>
+              <option value="group">貸切・団体のご相談</option>
+            </select></label>
+          <label for="f-time">ご希望の時間帯<select id="f-time" name="time"><option value="指定なし">指定なし</option><option value="デイクルーズ">デイクルーズ</option><option value="サンセットクルーズ">サンセットクルーズ</option><option value="ナイトクルーズ">ナイトクルーズ</option></select></label>
+        </div>
+        <div class="row">
+          <label for="f-date">ご希望日<input id="f-date" name="date" type="date"></label>
+          <label for="f-ppl">人数<select id="f-ppl" name="ppl"><option value="1名">1名</option><option value="2名" selected>2名</option><option value="3名">3名</option><option value="4名">4名</option><option value="5〜9名">5〜9名</option><option value="10名以上">10名以上</option></select></label>
+        </div>
+        <div class="row">
+          <label for="f-nm">お名前<span class="req">必須</span><input id="f-nm" name="nm" autocomplete="name" placeholder="山田 花子"></label>
+          <label for="f-tel">お電話番号<input id="f-tel" name="tel" type="tel" autocomplete="tel" placeholder="090-0000-0000"></label>
+        </div>
+        <label for="f-em">メールアドレス<span class="req">必須</span><input id="f-em" name="em" type="email" autocomplete="email" placeholder="you@example.com"></label>
+        <label for="f-msg">ご質問・ご要望<textarea id="f-msg" name="msg" placeholder="記念日でのご利用、お子様の年齢など"></textarea></label>
+        <div class="hp" aria-hidden="true"><label for="f-web">Website<input id="f-web" name="web" tabindex="-1" autocomplete="off"></label></div>
+        <details class="privacy">
+          <summary>個人情報の取り扱いについて</summary>
+          <p>ご入力いただいた情報は、株式会社ユニバーサルクルーズがお問い合わせへの回答、ご予約の手配、本クルーズに関するご案内にのみ使用します。宿泊付きプランのご予約時には、手配に必要な範囲で宿泊施設へ提供します。法令に基づく場合を除き、ご本人の同意なくそれ以外の第三者に提供することはありません。</p>
+        </details>
+        <label class="agree" for="f-ok"><input id="f-ok" name="ok" type="checkbox"> 個人情報の取り扱いに同意する</label>
+        <button class="btn" type="submit">送信する</button>
+        <p id="msg" class="done" hidden role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <a class="mark" href="#top" aria-label="トップへ">
+        <svg width="40" height="24" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 15c4-4 8-4 12 0s8 4 12 0 8-4 12 0" fill="none" stroke="#2C6E8F" stroke-width="1.3"/><path d="M2 21c4-4 8-4 12 0s8 4 12 0 8-4 12 0" fill="none" stroke="#A68A5B" stroke-width="1"/><path d="M12 10 20 2l8 8" fill="none" stroke="#222" stroke-width="1"/></svg>
+        <span><b>HANARIA</b><small>BAY CRUISE<i class="ob"> ・ OSAKA BAY</i></small></span>
+      </a>
+      <dl>
+        <dt>企画・販売</dt><dd>株式会社ユニバーサルクルーズ</dd>
+        <dt>旅行業登録</dt><dd>宿泊付きプランの旅行業登録番号・旅行条件書は販売開始時に掲載します</dd>
+        <dt>販売協力</dt><dd>グランドプリンスホテル大阪ベイ</dd>
+      </dl>
+      <div class="links">
+        <a href="https://www.princehotels.co.jp/osakabay/" target="_blank" rel="noopener">グランドプリンスホテル大阪ベイ ↗</a>
+        <a href="https://bbs-eventdining.com/" target="_blank" rel="noopener">B.B.S. Event Dining ↗</a>
+      </div>
+    </div>
+    <p class="copy">© 2026 UNIVERSAL CRUISE / HANARIA BAY CRUISE</p>
+  </div>
+</footer>
+
+<script>
+var I18N={"グランドプリンスホテル大阪ベイから出かける、":{"en":"An Osaka Bay cruise from Grand Prince Hotel Osaka Bay","zh-Hans":"从大阪湾格兰王子大饭店出发的大阪湾游船","zh-Hant":"從大阪灣格蘭王子大飯店出發的大阪灣遊船","ko":"그랜드 프린스 호텔 오사카 베이에서 떠나는 오사카만 크루즈"},"大阪湾クルーズ":{"en":"","zh-Hans":"","zh-Hant":"","ko":""},"ホテル公式サイト ↗":{"en":"Hotel official site ↗","zh-Hans":"酒店官网 ↗","zh-Hant":"飯店官網 ↗","ko":"호텔 공식 사이트 ↗"},"HANARIA Bay Cruise トップへ":{"en":"HANARIA Bay Cruise home","zh-Hans":"返回 HANARIA Bay Cruise 首页","zh-Hant":"返回 HANARIA Bay Cruise 首頁","ko":"HANARIA Bay Cruise 홈으로"},"ページ内メニュー":{"en":"Page menu","zh-Hans":"页面菜单","zh-Hant":"頁面選單","ko":"페이지 메뉴"},"プラン一覧":{"en":"Plans","zh-Hans":"方案一览","zh-Hant":"方案一覽","ko":"플랜 목록"},"クルーズ":{"en":"Cruise","zh-Hans":"游船","zh-Hant":"遊船","ko":"크루즈"},"宿泊付き":{"en":"Stay & Cruise","zh-Hans":"含住宿","zh-Hant":"含住宿","ko":"숙박 포함"},"B.B.S.セット":{"en":"B.B.S. Set","zh-Hans":"B.B.S.套餐","zh-Hant":"B.B.S.套餐","ko":"B.B.S. 세트"},"料金":{"en":"Price","zh-Hans":"价格","zh-Hant":"價格","ko":"요금"},"よくある質問":{"en":"FAQ","zh-Hans":"常见问题","zh-Hant":"常見問題","ko":"자주 묻는 질문"},"予約":{"en":"Book","zh-Hans":"预约","zh-Hant":"預約","ko":"예약"},"・お問い合わせ":{"en":" / Inquiry","zh-Hans":"・咨询","zh-Hant":"・諮詢","ko":"・문의"},"海辺のホテルから、":{"en":"From a seaside hotel, ","zh-Hans":"从海边的酒店出发，","zh-Hant":"從海邊的飯店出發，","ko":"바닷가 호텔에서, "},"水素の船で大阪湾へ。":{"en":"onto Osaka Bay by hydrogen ship.","zh-Hans":"乘氢能船畅游大阪湾。","zh-Hant":"搭氫能船暢遊大阪灣。","ko":"수소 선박을 타고 오사카만으로."},"グランドプリンスホテル大阪ベイのご滞在に、":{"en":"Add a cruise on HANARIA, a next-generation passenger ship, ","zh-Hans":"在大阪湾格兰王子大饭店的住宿之余，","zh-Hant":"在大阪灣格蘭王子大飯店的住宿之餘，","ko":"그랜드 프린스 호텔 오사카 베이에서의 머무름에, "},"次世代旅客船 HANARIA のクルーズを。":{"en":"to your stay at Grand Prince Hotel Osaka Bay.","zh-Hans":"乘坐新一代客船 HANARIA 出海。","zh-Hant":"搭乘新世代客船 HANARIA 出海。","ko":"차세대 여객선 HANARIA의 크루즈를 더해 보세요."},"料金・運航日は近日発表":{"en":"Prices and dates coming soon","zh-Hans":"价格及运航日即将公布","zh-Hant":"價格及航行日即將公布","ko":"요금・운항일 곧 발표"},"ただいま先行でお問い合わせを受け付けています":{"en":"Advance inquiries are now open","zh-Hans":"现已开放提前咨询","zh-Hant":"現已開放提前諮詢","ko":"현재 사전 문의를 받고 있습니다"},"プランの種類":{"en":"Plan type","zh-Hans":"方案类型","zh-Hant":"方案類型","ko":"플랜 종류"},"クルーズのみ":{"en":"Cruise Only","zh-Hans":"仅游船","zh-Hant":"僅遊船","ko":"크루즈만"},"宿泊付きクルーズ":{"en":"Stay & Cruise","zh-Hans":"含住宿游船","zh-Hant":"含住宿遊船","ko":"숙박 포함 크루즈"},"B.B.S.×クルーズ":{"en":"B.B.S. × Cruise","zh-Hans":"B.B.S.×游船","zh-Hant":"B.B.S.×遊船","ko":"B.B.S.×크루즈"},"ご希望日":{"en":"Preferred date","zh-Hans":"希望日期","zh-Hant":"希望日期","ko":"희망일"},"時間帯":{"en":"Time","zh-Hans":"时段","zh-Hant":"時段","ko":"시간대"},"指定なし":{"en":"Any","zh-Hans":"不限","zh-Hant":"不限","ko":"지정 없음"},"デイクルーズ":{"en":"Day Cruise","zh-Hans":"日间游船","zh-Hant":"日間遊船","ko":"데이 크루즈"},"サンセットクルーズ":{"en":"Sunset Cruise","zh-Hans":"日落游船","zh-Hant":"日落遊船","ko":"선셋 크루즈"},"ナイトクルーズ":{"en":"Night Cruise","zh-Hans":"夜间游船","zh-Hant":"夜間遊船","ko":"나이트 크루즈"},"人数":{"en":"Guests","zh-Hans":"人数","zh-Hant":"人數","ko":"인원"},"1名":{"en":"1 guest","zh-Hans":"1位","zh-Hant":"1位","ko":"1명"},"2名":{"en":"2 guests","zh-Hans":"2位","zh-Hant":"2位","ko":"2명"},"3名":{"en":"3 guests","zh-Hans":"3位","zh-Hant":"3位","ko":"3명"},"4名":{"en":"4 guests","zh-Hans":"4位","zh-Hant":"4位","ko":"4명"},"5〜9名":{"en":"5–9 guests","zh-Hans":"5〜9位","zh-Hant":"5〜9位","ko":"5~9명"},"10名以上":{"en":"10 or more","zh-Hans":"10位以上","zh-Hant":"10位以上","ko":"10명 이상"},"空き状況を問い合わせる":{"en":"Check availability","zh-Hans":"咨询空位","zh-Hant":"諮詢空位","ko":"예약 가능 여부 문의"},"ホテルにご宿泊でない方も、クルーズのみでご予約いただけます。":{"en":"Guests not staying at the hotel can also book the cruise only.","zh-Hans":"未入住酒店的客人也可以只预约游船。","zh-Hant":"未入住飯店的客人也可以只預約遊船。","ko":"호텔에 숙박하지 않는 분도 크루즈만 예약하실 수 있습니다."},"HANARIA について":{"en":"About HANARIA","zh-Hans":"关于 HANARIA","zh-Hant":"關於 HANARIA","ko":"HANARIA 소개"},"大阪湾に浮かぶ白い双胴船 HANARIA":{"en":"HANARIA, a white catamaran on Osaka Bay","zh-Hans":"浮在大阪湾上的白色双体船 HANARIA","zh-Hant":"浮在大阪灣上的白色雙體船 HANARIA","ko":"오사카만에 떠 있는 하얀 쌍동선 HANARIA"},"静かに、なめらかに。":{"en":"Quiet and smooth.","zh-Hans":"安静、平稳。","zh-Hant":"安靜、平穩。","ko":"조용하고, 부드럽게."},"水素と電気で走る、次世代の旅客船。":{"en":"A next-generation passenger ship powered by hydrogen and electricity.","zh-Hans":"以氢和电驱动的新一代客船。","zh-Hant":"以氫和電驅動的新世代客船。","ko":"수소와 전기로 달리는 차세대 여객선."},"HANARIA は、水素燃料電池とバッテリーを組み合わせて走るハイブリッド旅客船です。エンジン音や振動が少なく、海と街の景色を静かに味わえます。":{"en":"HANARIA is a hybrid passenger ship powered by hydrogen fuel cells and batteries. With little engine noise or vibration, you can quietly take in the views of the sea and the city.","zh-Hans":"HANARIA 是结合氢燃料电池与蓄电池驱动的混合动力客船。引擎噪音与振动都很小，可以静静欣赏大海与城市的景色。","zh-Hant":"HANARIA 是結合氫燃料電池與蓄電池驅動的混合動力客船。引擎噪音與振動都很小，可以靜靜欣賞大海與城市的景色。","ko":"HANARIA는 수소 연료전지와 배터리를 조합해 달리는 하이브리드 여객선입니다. 엔진 소음과 진동이 적어 바다와 도시의 풍경을 조용히 즐기실 수 있습니다."},"ホテルのすぐ近く、南港から大阪湾へ。昼の青い海、夕暮れの空、ベイエリアの夜景。ご滞在のどの時間にも、海の上のひとときを添えます。":{"en":"From Nanko, right near the hotel, out onto Osaka Bay. Blue seas by day, glowing skies at dusk, and the lights of the bay area at night — a moment on the water for any part of your stay.","zh-Hans":"从酒店附近的南港出发，驶向大阪湾。白天的蔚蓝大海、黄昏的天空、湾区的夜景。无论住宿期间的哪个时刻，都能享受海上时光。","zh-Hant":"從飯店附近的南港出發，駛向大阪灣。白天的蔚藍大海、黃昏的天空、灣區的夜景。無論住宿期間的哪個時刻，都能享受海上時光。","ko":"호텔 바로 근처 난코에서 오사카만으로. 낮의 푸른 바다, 해 질 녘 하늘, 베이 에어리어의 야경. 머무시는 어느 시간에도 바다 위의 한때를 더해 드립니다."},"水素ハイブリッド":{"en":"Hydrogen hybrid","zh-Hans":"氢能混合动力","zh-Hant":"氫能混合動力","ko":"수소 하이브리드"},"静かでなめらかな航行":{"en":"Quiet, smooth sailing","zh-Hans":"安静平稳的航行","zh-Hant":"安靜平穩的航行","ko":"조용하고 부드러운 항해"},"双胴船":{"en":"Catamaran","zh-Hans":"双体船","zh-Hant":"雙體船","ko":"쌍동선"},"揺れにくい船体":{"en":"Stable hull","zh-Hans":"不易摇晃的船体","zh-Hant":"不易搖晃的船體","ko":"흔들림이 적은 선체"},"約60分":{"en":"About 60 min","zh-Hans":"约60分钟","zh-Hant":"約60分鐘","ko":"약 60분"},"大阪湾をめぐる":{"en":"Around Osaka Bay","zh-Hans":"环游大阪湾","zh-Hant":"環遊大阪灣","ko":"오사카만 일주"},"おすすめのプラン":{"en":"Recommended Plans","zh-Hans":"推荐方案","zh-Hant":"推薦方案","ko":"추천 플랜"},"ご滞在のスタイルにあわせて、3つのプランからお選びいただけます。":{"en":"Choose from three plans to suit your stay.","zh-Hans":"可根据您的住宿方式，从3种方案中选择。","zh-Hant":"可依您的住宿方式，從3種方案中選擇。","ko":"머무시는 스타일에 맞춰 3가지 플랜 중에서 선택하실 수 있습니다."},"海上を進む HANARIA":{"en":"HANARIA sailing at sea","zh-Hans":"在海上航行的 HANARIA","zh-Hant":"在海上航行的 HANARIA","ko":"바다 위를 나아가는 HANARIA"},"ご宿泊の方も、ご宿泊でない方も。気軽に乗れる約60分の大阪湾クルーズです。":{"en":"Whether or not you are staying at the hotel — an easy, roughly 60-minute cruise around Osaka Bay.","zh-Hans":"无论是否入住酒店都可参加。约60分钟的轻松大阪湾游船。","zh-Hant":"無論是否入住飯店都可參加。約60分鐘的輕鬆大阪灣遊船。","ko":"숙박하시는 분도, 숙박하지 않는 분도. 부담 없이 탈 수 있는 약 60분의 오사카만 크루즈입니다."},"デイ／サンセット／ナイト":{"en":"Day / Sunset / Night","zh-Hans":"日间／日落／夜间","zh-Hant":"日間／日落／夜間","ko":"데이／선셋／나이트"},"近日発表":{"en":"Coming soon","zh-Hans":"即将公布","zh-Hant":"即將公布","ko":"곧 발표"},"夜のグランドプリンスホテル大阪ベイ":{"en":"Grand Prince Hotel Osaka Bay at night","zh-Hans":"夜晚的大阪湾格兰王子大饭店","zh-Hant":"夜晚的大阪灣格蘭王子大飯店","ko":"밤의 그랜드 프린스 호텔 오사카 베이"},"グランドプリンスホテル大阪ベイのご宿泊とクルーズをひとつに。お申し込みからご案内まで、まとめて手配します。":{"en":"Your stay at Grand Prince Hotel Osaka Bay and a cruise in one package. We arrange everything from booking to guidance.","zh-Hans":"将大阪湾格兰王子大饭店的住宿与游船合而为一。从申请到行程说明，一并为您安排。","zh-Hant":"將大阪灣格蘭王子大飯店的住宿與遊船合而為一。從申請到行程說明，一併為您安排。","ko":"그랜드 프린스 호텔 오사카 베이 숙박과 크루즈를 하나로. 신청부터 안내까지 한 번에 준비해 드립니다."},"ご宿泊":{"en":"Stay","zh-Hans":"住宿","zh-Hant":"住宿","ko":"숙박"},"1泊〜":{"en":"1 night +","zh-Hans":"1晚起","zh-Hant":"1晚起","ko":"1박~"},"LEDビジョンに囲まれた B.B.S. のダイニング":{"en":"Dining at B.B.S., surrounded by LED screens","zh-Hans":"被LED屏幕环绕的 B.B.S. 餐厅","zh-Hant":"被LED螢幕環繞的 B.B.S. 餐廳","ko":"LED 비전에 둘러싸인 B.B.S. 다이닝"},"B.B.S.×クルーズ セット":{"en":"B.B.S. × Cruise Set","zh-Hans":"B.B.S.×游船 套餐","zh-Hant":"B.B.S.×遊船 套餐","ko":"B.B.S.×크루즈 세트"},"ホテル地下1階の B.B.S. で、大型LEDに包まれるダイニングとエンターテインメント。海の上と、光の中と、ふたつの体験を一晩で。":{"en":"Dining and entertainment wrapped in giant LED screens at B.B.S. on the hotel's B1 floor. Two experiences in one evening — on the sea and in the light.","zh-Hans":"在酒店地下1层的 B.B.S.，享受被大型LED包围的美食与娱乐。海上与光影之中，一晚体验两种乐趣。","zh-Hant":"在飯店地下1樓的 B.B.S.，享受被大型LED包圍的美食與娛樂。海上與光影之中，一晚體驗兩種樂趣。","ko":"호텔 지하 1층 B.B.S.에서 대형 LED에 둘러싸인 다이닝과 엔터테인먼트. 바다 위와 빛 속, 두 가지 체험을 하룻밤에."},"ご宿泊の追加も可":{"en":"Stay can be added","zh-Hans":"可追加住宿","zh-Hant":"可追加住宿","ko":"숙박 추가 가능"},"クルーズのご案内":{"en":"Cruise Guide","zh-Hans":"游船介绍","zh-Hant":"遊船介紹","ko":"크루즈 안내"},"時間帯によって、同じ海がまったく違う表情を見せます。運航時刻・運航日は販売開始時にご案内します。":{"en":"The same sea looks completely different depending on the time of day. Departure times and dates will be announced when sales open.","zh-Hans":"不同时段，同一片海呈现截然不同的面貌。运航时间及日期将于开始销售时公布。","zh-Hant":"不同時段，同一片海呈現截然不同的面貌。航行時間及日期將於開始銷售時公布。","ko":"시간대에 따라 같은 바다가 전혀 다른 표정을 보여 줍니다. 운항 시각・운항일은 판매 개시 시 안내해 드립니다."},"光る水面と青い空。開放的なデッキで、潮風とともに大阪湾をめぐります。":{"en":"Sparkling water and blue skies. Cruise Osaka Bay in the sea breeze on the open deck.","zh-Hans":"波光粼粼的海面与蓝天。在开阔的甲板上，伴着海风环游大阪湾。","zh-Hant":"波光粼粼的海面與藍天。在開闊的甲板上，伴著海風環遊大阪灣。","ko":"반짝이는 수면과 푸른 하늘. 탁 트인 데크에서 바닷바람과 함께 오사카만을 돕니다."},"お昼の時間帯（予定）":{"en":"Midday (planned)","zh-Hans":"中午时段（预定）","zh-Hant":"中午時段（預定）","ko":"낮 시간대(예정)"},"海に沈む夕日を、さえぎるもののない船上から。大阪湾がもっとも美しく染まる時間です。":{"en":"Watch the sun sink into the sea from an unobstructed deck — the hour when Osaka Bay is at its most beautiful.","zh-Hans":"在毫无遮挡的船上，欣赏沉入大海的夕阳。这是大阪湾最美的时刻。","zh-Hant":"在毫無遮擋的船上，欣賞沉入大海的夕陽。這是大阪灣最美的時刻。","ko":"바다로 지는 석양을 막힘없는 선상에서. 오사카만이 가장 아름답게 물드는 시간입니다."},"夕方の時間帯（予定）":{"en":"Evening (planned)","zh-Hans":"傍晚时段（预定）","zh-Hant":"傍晚時段（預定）","ko":"저녁 시간대(예정)"},"ベイエリアの灯りと、海の上の静けさ。ご夕食のあとの特別なひとときに。":{"en":"The lights of the bay area and the stillness of the sea — a special moment after dinner.","zh-Hans":"湾区的灯火与海上的宁静。为晚餐后增添一段特别时光。","zh-Hant":"灣區的燈火與海上的寧靜。為晚餐後增添一段特別時光。","ko":"베이 에어리어의 불빛과 바다 위의 고요함. 저녁 식사 후의 특별한 한때를."},"夜の時間帯（予定）":{"en":"Night (planned)","zh-Hans":"夜间时段（预定）","zh-Hant":"夜間時段（預定）","ko":"밤 시간대(예정)"},"波を立てて進む HANARIA の正面":{"en":"HANARIA from the front, cutting through the waves","zh-Hans":"破浪前进的 HANARIA 正面","zh-Hant":"破浪前進的 HANARIA 正面","ko":"파도를 가르며 나아가는 HANARIA 정면"},"ステンドグラス調の窓がある客室":{"en":"Cabin with stained-glass style windows","zh-Hans":"带有彩绘玻璃风格窗户的客舱","zh-Hant":"帶有彩繪玻璃風格窗戶的客艙","ko":"스테인드글라스 풍 창이 있는 객실"},"客室（イメージ）":{"en":"Cabin (image)","zh-Hans":"客舱（示意图）","zh-Hant":"客艙（示意圖）","ko":"객실(이미지)"},"ウッドデッキの屋外デッキ":{"en":"Outdoor wooden deck","zh-Hans":"木质户外甲板","zh-Hant":"木質戶外甲板","ko":"우드 데크의 야외 데크"},"デッキ（イメージ）":{"en":"Deck (image)","zh-Hans":"甲板（示意图）","zh-Hant":"甲板（示意圖）","ko":"데크(이미지)"},"HANARIA の船首":{"en":"Bow of HANARIA","zh-Hans":"HANARIA 的船首","zh-Hant":"HANARIA 的船首","ko":"HANARIA의 뱃머리"},"船首":{"en":"Bow","zh-Hans":"船首","zh-Hant":"船首","ko":"뱃머리"},"上空から見た航行中の HANARIA":{"en":"Aerial view of HANARIA under way","zh-Hans":"从空中俯瞰航行中的 HANARIA","zh-Hant":"從空中俯瞰航行中的 HANARIA","ko":"하늘에서 본 항해 중인 HANARIA"},"大阪湾を航行":{"en":"Sailing Osaka Bay","zh-Hans":"航行于大阪湾","zh-Hant":"航行於大阪灣","ko":"오사카만 항해"},"ホテルのご宿泊とクルーズを組み合わせた旅行プランです。旅行業務取扱管理者のいる当社が、ご宿泊とクルーズをまとめて手配します。":{"en":"A travel package combining a hotel stay and a cruise. Our company, with a licensed travel service manager on staff, arranges both together.","zh-Hans":"结合酒店住宿与游船的旅行方案。由设有旅行业务管理者的本公司一并安排住宿与游船。","zh-Hant":"結合飯店住宿與遊船的旅行方案。由設有旅行業務管理者的本公司一併安排住宿與遊船。","ko":"호텔 숙박과 크루즈를 조합한 여행 플랜입니다. 여행업무 취급관리자가 있는 당사가 숙박과 크루즈를 한 번에 준비해 드립니다."},"大阪湾沿いに建つグランドプリンスホテル大阪ベイの夜景":{"en":"Night view of Grand Prince Hotel Osaka Bay on the bay","zh-Hans":"坐落于大阪湾畔的大阪湾格兰王子大饭店夜景","zh-Hant":"坐落於大阪灣畔的大阪灣格蘭王子大飯店夜景","ko":"오사카만에 위치한 그랜드 프린스 호텔 오사카 베이의 야경"},"グランドプリンスホテル大阪ベイ":{"en":"Grand Prince Hotel Osaka Bay","zh-Hans":"大阪湾格兰王子大饭店","zh-Hant":"大阪灣格蘭王子大飯店","ko":"그랜드 프린스 호텔 오사카 베이"},"MODEL PLAN ・ 1泊2日":{"en":"MODEL PLAN ・ 2 days, 1 night","zh-Hans":"MODEL PLAN ・ 2天1晚","zh-Hant":"MODEL PLAN ・ 2天1夜","ko":"MODEL PLAN ・ 1박 2일"},"夕日の海から、":{"en":"From the sunset sea","zh-Hans":"从夕阳下的大海，","zh-Hant":"從夕陽下的大海，","ko":"석양의 바다에서,"},"海辺のホテルの夜へ。":{"en":"to a night at a seaside hotel.","zh-Hans":"回到海边酒店的夜晚。","zh-Hant":"回到海邊飯店的夜晚。","ko":"바닷가 호텔의 밤으로."},"チェックイン後にサンセットクルーズへ。夕暮れの大阪湾を楽しんだあとは、ホテルでゆっくりお過ごしください。":{"en":"After check-in, head out on the sunset cruise. Once you've enjoyed Osaka Bay at dusk, relax at the hotel.","zh-Hans":"办理入住后参加日落游船。欣赏完黄昏的大阪湾后，请在酒店悠闲度过。","zh-Hant":"辦理入住後參加日落遊船。欣賞完黃昏的大阪灣後，請在飯店悠閒度過。","ko":"체크인 후 선셋 크루즈로. 해 질 녘 오사카만을 즐긴 뒤에는 호텔에서 여유롭게 보내세요."},"午後":{"en":"Afternoon","zh-Hans":"下午","zh-Hant":"下午","ko":"오후"},"ホテルにチェックイン":{"en":"Check in at the hotel","zh-Hans":"入住酒店","zh-Hant":"入住飯店","ko":"호텔 체크인"},"夕方":{"en":"Evening","zh-Hans":"傍晚","zh-Hant":"傍晚","ko":"저녁"},"乗り場へ移動し、サンセットクルーズ（約60分）":{"en":"Go to the pier for the sunset cruise (about 60 min)","zh-Hans":"前往码头，搭乘日落游船（约60分钟）","zh-Hant":"前往碼頭，搭乘日落遊船（約60分鐘）","ko":"선착장으로 이동해 선셋 크루즈(약 60분)"},"夜":{"en":"Night","zh-Hans":"夜晚","zh-Hant":"夜晚","ko":"밤"},"ホテルのレストランでご夕食（オプション予定）／客室でおくつろぎ":{"en":"Dinner at a hotel restaurant (planned option) / relax in your room","zh-Hans":"在酒店餐厅享用晚餐（预定为选项）／在客房放松","zh-Hant":"在飯店餐廳享用晚餐（預定為選項）／在客房放鬆","ko":"호텔 레스토랑에서 저녁 식사(옵션 예정)／객실에서 휴식"},"朝":{"en":"Morning","zh-Hans":"早晨","zh-Hant":"早晨","ko":"아침"},"ご朝食（プランにより異なります）":{"en":"Breakfast (depends on plan)","zh-Hans":"早餐（依方案而定）","zh-Hant":"早餐（依方案而定）","ko":"조식(플랜에 따라 다름)"},"午前":{"en":"Late morning","zh-Hans":"上午","zh-Hant":"上午","ko":"오전"},"チェックアウト":{"en":"Check out","zh-Hans":"退房","zh-Hant":"退房","ko":"체크아웃"},"※ 行程はモデルプランです。クルーズの時間帯（デイ／サンセット／ナイト）や、チェックアウト日のクルーズもお選びいただける予定です。":{"en":"* This is a model itinerary. We plan to let you choose the cruise time (day / sunset / night) or a cruise on your check-out day.","zh-Hans":"※ 行程为示例方案。预计可选择游船时段（日间／日落／夜间）或退房当天的游船。","zh-Hant":"※ 行程為示範方案。預計可選擇遊船時段（日間／日落／夜間）或退房當天的遊船。","ko":"※ 일정은 모델 플랜입니다. 크루즈 시간대(데이／선셋／나이트)나 체크아웃 날의 크루즈도 선택하실 수 있을 예정입니다."},"※ 対象客室・お食事の内容・料金は、販売開始時にご案内します。":{"en":"* Eligible room types, meals and prices will be announced when sales open.","zh-Hans":"※ 适用客房、餐饮内容及价格将于开始销售时公布。","zh-Hant":"※ 適用客房、餐飲內容及價格將於開始銷售時公布。","ko":"※ 대상 객실・식사 내용・요금은 판매 개시 시 안내해 드립니다."},"宿泊付きプランを問い合わせる":{"en":"Inquire about Stay & Cruise","zh-Hans":"咨询含住宿方案","zh-Hant":"諮詢含住宿方案","ko":"숙박 포함 플랜 문의"},"B.B.S. は、グランドプリンスホテル大阪ベイの地下1階にある、大型LED映像設備を備えたイベント・ダイニングスペース。光と映像の空間と、海の上の時間を、ひとつのプランでお楽しみいただけます。":{"en":"B.B.S. is an event and dining space with large LED screens on B1 of Grand Prince Hotel Osaka Bay. Enjoy a space of light and imagery and time on the sea in a single plan.","zh-Hans":"B.B.S. 位于大阪湾格兰王子大饭店地下1层，是配备大型LED影像设备的活动与餐饮空间。在一个方案中，同时享受光影空间与海上时光。","zh-Hant":"B.B.S. 位於大阪灣格蘭王子大飯店地下1樓，是配備大型LED影像設備的活動與餐飲空間。在一個方案中，同時享受光影空間與海上時光。","ko":"B.B.S.는 그랜드 프린스 호텔 오사카 베이 지하 1층에 있는, 대형 LED 영상 설비를 갖춘 이벤트・다이닝 공간입니다. 빛과 영상의 공간, 그리고 바다 위의 시간을 하나의 플랜으로 즐기실 수 있습니다."},"海の映像を映した4面LEDのステージ":{"en":"Four-sided LED stage showing the sea","zh-Hans":"播放海洋影像的四面LED舞台","zh-Hant":"播放海洋影像的四面LED舞台","ko":"바다 영상을 비춘 4면 LED 스테이지"},"B.B.S. 4面LEDステージ":{"en":"B.B.S. four-sided LED stage","zh-Hans":"B.B.S. 四面LED舞台","zh-Hant":"B.B.S. 四面LED舞台","ko":"B.B.S. 4면 LED 스테이지"},"光に包まれるダイニングと、":{"en":"Dining wrapped in light,","zh-Hans":"被光影包围的晚餐，","zh-Hant":"被光影包圍的晚餐，","ko":"빛에 둘러싸인 다이닝과,"},"夜の海をひとつに。":{"en":"and the night sea, together.","zh-Hans":"与夜晚的大海合而为一。","zh-Hant":"與夜晚的大海合而為一。","ko":"밤바다를 하나로."},"ステージの正面・左右・床面をLEDビジョンが囲む B.B.S. で、映像演出とともにお食事やイベントを。そのあと（または前に）HANARIA で大阪湾へ。":{"en":"At B.B.S., where LED screens surround the stage on the front, sides and floor, enjoy dinner and events with visual effects. Then (or before) head out onto Osaka Bay on HANARIA.","zh-Hans":"在舞台正面、左右及地面都被LED屏幕环绕的 B.B.S.，伴随影像演出享用美食与活动。之后（或之前）乘坐 HANARIA 前往大阪湾。","zh-Hant":"在舞台正面、左右及地面都被LED螢幕環繞的 B.B.S.，伴隨影像演出享用美食與活動。之後（或之前）搭乘 HANARIA 前往大阪灣。","ko":"무대 정면・좌우・바닥을 LED 비전이 둘러싼 B.B.S.에서 영상 연출과 함께 식사와 이벤트를. 그 후(또는 그 전에) HANARIA로 오사카만으로."},"B.B.S.（ホテル地下1階）でダイニング・エンターテインメント":{"en":"Dining & entertainment at B.B.S. (hotel B1)","zh-Hans":"在 B.B.S.（酒店地下1层）享受美食与娱乐","zh-Hant":"在 B.B.S.（飯店地下1樓）享受美食與娛樂","ko":"B.B.S.(호텔 지하 1층)에서 다이닝・엔터테인먼트"},"乗り場へ移動":{"en":"Go to the pier","zh-Hans":"前往码头","zh-Hant":"前往碼頭","ko":"선착장으로 이동"},"HANARIA でクルーズ（約60分）":{"en":"Cruise on HANARIA (about 60 min)","zh-Hans":"乘坐 HANARIA 游船（约60分钟）","zh-Hant":"搭乘 HANARIA 遊船（約60分鐘）","ko":"HANARIA 크루즈(약 60분)"},"ホテルのご宿泊を追加して、そのままお泊まりに":{"en":"Add a hotel stay and spend the night","zh-Hans":"追加酒店住宿，直接入住","zh-Hant":"追加飯店住宿，直接入住","ko":"호텔 숙박을 추가해 그대로 묵기"},"※ 実施日・内容（お食事・イベント）・料金は、販売開始時にご案内します。順番は実施日によって変わる場合があります。":{"en":"* Dates, content (meals and events) and prices will be announced when sales open. The order may vary by date.","zh-Hans":"※ 实施日期、内容（餐饮・活动）及价格将于开始销售时公布。顺序可能因日期而异。","zh-Hant":"※ 實施日期、內容（餐飲・活動）及價格將於開始銷售時公布。順序可能因日期而異。","ko":"※ 실시일・내용(식사・이벤트)・요금은 판매 개시 시 안내해 드립니다. 순서는 실시일에 따라 바뀔 수 있습니다."},"セットプランを問い合わせる":{"en":"Inquire about the set plan","zh-Hans":"咨询套餐方案","zh-Hant":"諮詢套餐方案","ko":"세트 플랜 문의"},"夕焼けの映像を映したLEDとダイニング席":{"en":"LED screens showing a sunset, and dining seats","zh-Hans":"播放晚霞影像的LED与餐席","zh-Hant":"播放晚霞影像的LED與餐席","ko":"노을 영상을 비춘 LED와 다이닝석"},"メインフロア":{"en":"Main floor","zh-Hans":"主楼层","zh-Hant":"主樓層","ko":"메인 플로어"},"B.B.S. の客席とバーカウンター":{"en":"B.B.S. seating and bar counter","zh-Hans":"B.B.S. 的座位与吧台","zh-Hant":"B.B.S. 的座位與吧檯","ko":"B.B.S.의 객석과 바 카운터"},"客席":{"en":"Seating","zh-Hans":"座位","zh-Hant":"座位","ko":"객석"},"照明に照らされたバーカウンター":{"en":"Illuminated bar counter","zh-Hans":"灯光照耀下的吧台","zh-Hant":"燈光照耀下的吧檯","ko":"조명에 비친 바 카운터"},"バーカウンター":{"en":"Bar counter","zh-Hans":"吧台","zh-Hant":"吧檯","ko":"바 카운터"},"LEDに囲まれたステージでのライブ":{"en":"Live show on a stage surrounded by LED","zh-Hans":"LED环绕舞台上的现场演出","zh-Hant":"LED環繞舞台上的現場演出","ko":"LED에 둘러싸인 무대에서의 라이브"},"イベント開催時":{"en":"During an event","zh-Hans":"活动举办时","zh-Hant":"活動舉辦時","ko":"이벤트 개최 시"},"ホテルシェフの料理":{"en":"Dishes by hotel chefs","zh-Hans":"酒店主厨料理","zh-Hant":"飯店主廚料理","ko":"호텔 셰프의 요리"},"料金は現在調整中です。決まり次第、このページでお知らせします。":{"en":"Prices are being finalized and will be posted on this page.","zh-Hans":"价格目前正在调整中，确定后将在本页公布。","zh-Hant":"價格目前正在調整中，確定後將於本頁公布。","ko":"요금은 현재 조정 중입니다. 정해지는 대로 이 페이지에서 알려 드립니다."},"プラン":{"en":"Plan","zh-Hans":"方案","zh-Hant":"方案","ko":"플랜"},"料金（お一人様・税込）":{"en":"Price (per person, tax incl.)","zh-Hans":"价格（每位・含税）","zh-Hant":"價格（每位・含稅）","ko":"요금(1인・세금 포함)"},"含まれるもの":{"en":"Includes","zh-Hans":"包含内容","zh-Hant":"包含內容","ko":"포함 내용"},"クルーズ乗船（約60分）":{"en":"Cruise (about 60 min)","zh-Hans":"游船乘船（约60分钟）","zh-Hant":"遊船乘船（約60分鐘）","ko":"크루즈 승선(약 60분)"},"1泊2日〜":{"en":"2 days, 1 night +","zh-Hans":"2天1晚起","zh-Hant":"2天1夜起","ko":"1박 2일~"},"ご宿泊＋クルーズ乗船（お食事はプランにより異なります）":{"en":"Hotel stay + cruise (meals depend on plan)","zh-Hans":"住宿＋游船（餐饮依方案而定）","zh-Hant":"住宿＋遊船（餐飲依方案而定）","ko":"숙박＋크루즈 승선(식사는 플랜에 따라 다름)"},"宿泊の追加も可":{"en":"Stay can be added","zh-Hans":"可追加住宿","zh-Hant":"可追加住宿","ko":"숙박 추가 가능"},"B.B.S. でのダイニング・イベント＋クルーズ乗船":{"en":"Dining/event at B.B.S. + cruise","zh-Hans":"B.B.S. 餐饮・活动＋游船","zh-Hant":"B.B.S. 餐飲・活動＋遊船","ko":"B.B.S. 다이닝・이벤트＋크루즈 승선"},"※ 小児料金・団体料金・貸切（チャーター）については、お問い合わせください。":{"en":"* Please contact us about child fares, group fares and private charters.","zh-Hans":"※ 儿童价格、团体价格及包船（包租）事宜，请咨询我们。","zh-Hant":"※ 兒童價格、團體價格及包船（包租）事宜，請與我們聯繫。","ko":"※ 어린이 요금・단체 요금・전세(차터)는 문의해 주세요."},"※ 天候・海象により欠航する場合があります。欠航時の取り扱い、取消料は販売開始時にご案内します。":{"en":"* Cruises may be cancelled due to weather or sea conditions. Cancellation policies and fees will be announced when sales open.","zh-Hans":"※ 可能因天气或海况停航。停航时的处理方式及取消费用将于开始销售时公布。","zh-Hant":"※ 可能因天氣或海況停航。停航時的處理方式及取消費用將於開始銷售時公布。","ko":"※ 날씨・해상 상황에 따라 결항될 수 있습니다. 결항 시 처리와 취소 수수료는 판매 개시 시 안내해 드립니다."},"あわせてご覧ください":{"en":"See Also","zh-Hans":"相关网站","zh-Hant":"相關網站","ko":"함께 보기"},"大阪湾に面したアーバンリゾートホテル。客室・レストラン・ご宿泊プランは、ホテル公式サイトでご覧いただけます。":{"en":"An urban resort hotel facing Osaka Bay. See rooms, restaurants and stay plans on the hotel's official site.","zh-Hans":"面朝大阪湾的都市度假酒店。客房、餐厅及住宿方案请浏览酒店官网。","zh-Hant":"面朝大阪灣的都市度假飯店。客房、餐廳及住宿方案請瀏覽飯店官網。","ko":"오사카만에 면한 어반 리조트 호텔. 객실・레스토랑・숙박 플랜은 호텔 공식 사이트에서 보실 수 있습니다."},"ホテル公式サイトへ ↗":{"en":"Visit hotel site ↗","zh-Hans":"前往酒店官网 ↗","zh-Hant":"前往飯店官網 ↗","ko":"호텔 공식 사이트로 ↗"},"ホテル地下1階、大型LED映像設備を備えた貸切イベント・ダイニングスペース。イベント情報や会場の詳細はこちら。":{"en":"A private event and dining space with large LED screens on the hotel's B1 floor. Event information and venue details here.","zh-Hans":"位于酒店地下1层、配备大型LED影像设备的包场活动与餐饮空间。活动资讯及场地详情请点此。","zh-Hant":"位於飯店地下1樓、配備大型LED影像設備的包場活動與餐飲空間。活動資訊及場地詳情請點此。","ko":"호텔 지하 1층, 대형 LED 영상 설비를 갖춘 대관 이벤트・다이닝 공간. 이벤트 정보와 회장 상세는 여기에서."},"B.B.S. 公式サイトへ ↗":{"en":"Visit B.B.S. site ↗","zh-Hans":"前往 B.B.S. 官网 ↗","zh-Hant":"前往 B.B.S. 官網 ↗","ko":"B.B.S. 공식 사이트로 ↗"},"アクセス":{"en":"Access","zh-Hans":"交通","zh-Hant":"交通","ko":"오시는 길"},"岸壁近くを進む HANARIA":{"en":"HANARIA sailing near the quay","zh-Hans":"在码头附近航行的 HANARIA","zh-Hant":"在碼頭附近航行的 HANARIA","ko":"안벽 근처를 나아가는 HANARIA"},"ホテル":{"en":"Hotel","zh-Hans":"酒店","zh-Hant":"飯店","ko":"호텔"},"〒559-0034 大阪府大阪市住之江区南港北1-13-11":{"en":"1-13-11 Nanko-kita, Suminoe-ku, Osaka 559-0034","zh-Hans":"〒559-0034 大阪府大阪市住之江区南港北1-13-11","zh-Hant":"〒559-0034 大阪府大阪市住之江區南港北1-13-11","ko":"〒559-0034 오사카부 오사카시 스미노에구 난코키타 1-13-11"},"電車":{"en":"Train","zh-Hans":"电车","zh-Hant":"電車","ko":"전철"},"大阪メトロ ニュートラム「中ふ頭」駅 2番出口から徒歩約3分":{"en":"About 3 min walk from Exit 2 of Nakafuto Station (Osaka Metro New Tram)","zh-Hans":"大阪地铁 New Tram「中埠头」站2号出口步行约3分钟","zh-Hant":"大阪地鐵 New Tram「中埠頭」站2號出口步行約3分鐘","ko":"오사카 메트로 뉴트램 '나카후토'역 2번 출구에서 도보 약 3분"},"ホテル 地下1階":{"en":"Hotel B1 floor","zh-Hans":"酒店地下1层","zh-Hant":"飯店地下1樓","ko":"호텔 지하 1층"},"乗船場所":{"en":"Boarding","zh-Hans":"乘船地点","zh-Hant":"乘船地點","ko":"승선 장소"},"南港エリアの乗り場を予定しています。詳しい場所と集合時刻は、ご予約確定時にご案内します。":{"en":"A pier in the Nanko area is planned. The exact location and meeting time will be provided when your booking is confirmed.","zh-Hans":"预定在南港区域的码头乘船。详细地点及集合时间将于预约确认时通知。","zh-Hant":"預定在南港區域的碼頭乘船。詳細地點及集合時間將於預約確認時通知。","ko":"난코 지역의 선착장을 예정하고 있습니다. 자세한 장소와 집합 시각은 예약 확정 시 안내해 드립니다."},"よくあるご質問":{"en":"Frequently Asked Questions","zh-Hans":"常见问题","zh-Hant":"常見問題","ko":"자주 묻는 질문"},"ホテルに宿泊しなくてもクルーズに乗れますか？":{"en":"Can I join the cruise without staying at the hotel?","zh-Hans":"不入住酒店也能乘坐游船吗？","zh-Hant":"不入住飯店也能搭乘遊船嗎？","ko":"호텔에 숙박하지 않아도 크루즈를 탈 수 있나요?"},"はい。「クルーズのみ」プランは、ご宿泊の有無にかかわらずご利用いただけます。":{"en":"Yes. The Cruise Only plan is available whether or not you stay at the hotel.","zh-Hans":"可以。「仅游船」方案无论是否住宿均可使用。","zh-Hant":"可以。「僅遊船」方案無論是否住宿皆可使用。","ko":"네. '크루즈만' 플랜은 숙박 여부와 관계없이 이용하실 수 있습니다."},"宿泊付きクルーズはどこが販売していますか？":{"en":"Who sells the Stay & Cruise plan?","zh-Hans":"含住宿游船由谁销售？","zh-Hant":"含住宿遊船由誰銷售？","ko":"숙박 포함 크루즈는 어디에서 판매하나요?"},"ご宿泊とクルーズを組み合わせた旅行プランとして、株式会社ユニバーサルクルーズが企画・手配します。旅行条件は販売開始時に掲載します。":{"en":"Universal Cruise Co., Ltd. plans and arranges it as a travel package combining a stay and a cruise. Travel terms will be posted when sales open.","zh-Hans":"作为结合住宿与游船的旅行方案，由 Universal Cruise 株式会社策划与安排。旅行条件将于开始销售时公布。","zh-Hant":"作為結合住宿與遊船的旅行方案，由 Universal Cruise 株式會社企劃與安排。旅行條件將於開始銷售時公布。","ko":"숙박과 크루즈를 조합한 여행 플랜으로서 주식회사 유니버설 크루즈가 기획・수배합니다. 여행 조건은 판매 개시 시 게재합니다."},"雨の日や海が荒れている日はどうなりますか？":{"en":"What happens on rainy days or in rough seas?","zh-Hans":"下雨或海况恶劣时怎么办？","zh-Hant":"下雨或海況惡劣時怎麼辦？","ko":"비 오는 날이나 바다가 거친 날은 어떻게 되나요?"},"安全のため、天候・海象によって欠航する場合があります。欠航が決まった場合はご連絡し、取り扱いをご案内します。":{"en":"For safety, cruises may be cancelled depending on weather and sea conditions. If a cruise is cancelled, we will contact you with details.","zh-Hans":"为确保安全，可能因天气或海况停航。决定停航时将与您联系并说明处理方式。","zh-Hant":"為確保安全，可能因天氣或海況停航。決定停航時將與您聯繫並說明處理方式。","ko":"안전을 위해 날씨・해상 상황에 따라 결항될 수 있습니다. 결항이 결정되면 연락드리고 처리 방법을 안내해 드립니다."},"子ども連れでも乗れますか？":{"en":"Can children come on board?","zh-Hans":"可以带孩子乘船吗？","zh-Hant":"可以帶孩子搭船嗎？","ko":"아이와 함께 탈 수 있나요?"},"お子様もご乗船いただけます。年齢ごとの料金やご注意事項は、販売開始時にご案内します。":{"en":"Yes, children are welcome. Fares by age and notes will be announced when sales open.","zh-Hans":"儿童也可乘船。各年龄段价格及注意事项将于开始销售时公布。","zh-Hant":"兒童也可搭船。各年齡層價格及注意事項將於開始銷售時公布。","ko":"어린이도 승선하실 수 있습니다. 연령별 요금과 주의 사항은 판매 개시 시 안내해 드립니다."},"船の中で飲食はできますか？":{"en":"Can I eat and drink on board?","zh-Hans":"船上可以饮食吗？","zh-Hant":"船上可以飲食嗎？","ko":"배 안에서 음식을 먹을 수 있나요?"},"船内での飲食の提供内容は、プランごとに販売開始時にご案内します。":{"en":"Food and drink on board for each plan will be announced when sales open.","zh-Hans":"船上餐饮内容将按方案于开始销售时公布。","zh-Hant":"船上餐飲內容將依方案於開始銷售時公布。","ko":"선내 음식 제공 내용은 플랜별로 판매 개시 시 안내해 드립니다."},"グループや貸切で利用できますか？":{"en":"Is it available for groups or private charter?","zh-Hans":"可以团体或包船使用吗？","zh-Hant":"可以團體或包船使用嗎？","ko":"단체나 전세로 이용할 수 있나요?"},"ご相談を承ります。下のフォームから「貸切・団体のご相談」をお選びください。":{"en":"Yes, please consult us. Select “Private charter / group inquiry” in the form below.","zh-Hans":"欢迎咨询。请在下方表单中选择「包船・团体咨询」。","zh-Hant":"歡迎諮詢。請在下方表單中選擇「包船・團體諮詢」。","ko":"상담해 드립니다. 아래 양식에서 '전세・단체 상담'을 선택해 주세요."},"予約・お問い合わせ":{"en":"Reservations & Inquiries","zh-Hans":"预约・咨询","zh-Hant":"預約・諮詢","ko":"예약・문의"},"ただいま先行でお問い合わせを受け付けています。内容を確認のうえ、担当者からご連絡します。":{"en":"Advance inquiries are now open. Our staff will contact you after reviewing your request.","zh-Hans":"现已开放提前咨询。确认内容后，负责人将与您联系。","zh-Hant":"現已開放提前諮詢。確認內容後，負責人將與您聯繫。","ko":"현재 사전 문의를 받고 있습니다. 내용을 확인한 후 담당자가 연락드립니다."},"ご希望のプラン":{"en":"Plan","zh-Hans":"希望方案","zh-Hant":"希望方案","ko":"희망 플랜"},"必須":{"en":"Required","zh-Hans":"必填","zh-Hant":"必填","ko":"필수"},"貸切・団体のご相談":{"en":"Private charter / group inquiry","zh-Hans":"包船・团体咨询","zh-Hant":"包船・團體諮詢","ko":"전세・단체 상담"},"ご希望の時間帯":{"en":"Preferred time","zh-Hans":"希望时段","zh-Hant":"希望時段","ko":"희망 시간대"},"お名前":{"en":"Name","zh-Hans":"姓名","zh-Hant":"姓名","ko":"성함"},"山田 花子":{"en":"Hanako Yamada","zh-Hans":"王 小明","zh-Hant":"王 小明","ko":"홍 길동"},"お電話番号":{"en":"Phone","zh-Hans":"电话号码","zh-Hant":"電話號碼","ko":"전화번호"},"メールアドレス":{"en":"Email","zh-Hans":"电子邮箱","zh-Hant":"電子郵件","ko":"이메일 주소"},"ご質問・ご要望":{"en":"Questions / requests","zh-Hans":"问题・需求","zh-Hant":"問題・需求","ko":"질문・요청 사항"},"記念日でのご利用、お子様の年齢など":{"en":"e.g. anniversary, children's ages","zh-Hans":"如纪念日使用、儿童年龄等","zh-Hant":"如紀念日使用、兒童年齡等","ko":"기념일 이용, 자녀 나이 등"},"個人情報の取り扱いについて":{"en":"Privacy policy","zh-Hans":"关于个人信息的处理","zh-Hant":"關於個人資料的處理","ko":"개인정보 취급에 대하여"},"ご入力いただいた情報は、株式会社ユニバーサルクルーズがお問い合わせへの回答、ご予約の手配、本クルーズに関するご案内にのみ使用します。宿泊付きプランのご予約時には、手配に必要な範囲で宿泊施設へ提供します。法令に基づく場合を除き、ご本人の同意なくそれ以外の第三者に提供することはありません。":{"en":"Universal Cruise Co., Ltd. uses the information you enter only to answer your inquiry, arrange your booking and send information about this cruise. For Stay & Cruise bookings, it is shared with the hotel to the extent needed for arrangements. Except as required by law, it is not provided to any other third party without your consent.","zh-Hans":"您填写的信息仅由 Universal Cruise 株式会社用于回复咨询、安排预约及提供本游船相关资讯。预约含住宿方案时，将在安排所需范围内提供给住宿设施。除法律规定外，未经本人同意不会提供给其他第三方。","zh-Hant":"您填寫的資料僅由 Universal Cruise 株式會社用於回覆諮詢、安排預約及提供本遊船相關資訊。預約含住宿方案時，將在安排所需範圍內提供給住宿設施。除法律規定外，未經本人同意不會提供給其他第三方。","ko":"입력하신 정보는 주식회사 유니버설 크루즈가 문의 답변, 예약 수배, 본 크루즈 관련 안내에만 사용합니다. 숙박 포함 플랜 예약 시에는 수배에 필요한 범위에서 숙박 시설에 제공합니다. 법령에 근거한 경우를 제외하고 본인의 동의 없이 그 밖의 제3자에게 제공하지 않습니다."},"個人情報の取り扱いに同意する":{"en":"I agree to the privacy policy","zh-Hans":"同意个人信息处理方式","zh-Hant":"同意個人資料處理方式","ko":"개인정보 취급에 동의합니다"},"送信する":{"en":"Send","zh-Hans":"提交","zh-Hant":"送出","ko":"보내기"},"トップへ":{"en":"Back to top","zh-Hans":"返回顶部","zh-Hant":"返回頂部","ko":"맨 위로"},"企画・販売":{"en":"Planning & sales","zh-Hans":"策划・销售","zh-Hant":"企劃・銷售","ko":"기획・판매"},"株式会社ユニバーサルクルーズ":{"en":"Universal Cruise Co., Ltd.","zh-Hans":"Universal Cruise 株式会社","zh-Hant":"Universal Cruise 株式會社","ko":"주식회사 유니버설 크루즈"},"旅行業登録":{"en":"Travel agency registration","zh-Hans":"旅行业登记","zh-Hant":"旅行業登記","ko":"여행업 등록"},"宿泊付きプランの旅行業登録番号・旅行条件書は販売開始時に掲載します":{"en":"Registration number and travel terms for Stay & Cruise will be posted when sales open","zh-Hans":"含住宿方案的旅行业登记号及旅行条件书将于开始销售时公布","zh-Hant":"含住宿方案的旅行業登記號碼及旅行條件書將於開始銷售時公布","ko":"숙박 포함 플랜의 여행업 등록번호・여행 조건서는 판매 개시 시 게재합니다"},"販売協力":{"en":"Sales partner","zh-Hans":"销售合作","zh-Hant":"銷售合作","ko":"판매 협력"},"グランドプリンスホテル大阪ベイ ↗":{"en":"Grand Prince Hotel Osaka Bay ↗","zh-Hans":"大阪湾格兰王子大饭店 ↗","zh-Hant":"大阪灣格蘭王子大飯店 ↗","ko":"그랜드 프린스 호텔 오사카 베이 ↗"},"ご宿泊とクルーズをまとめて手配します。ご希望日はチェックイン日をお選びください。":{"en":"We arrange your stay and cruise together. Please choose your check-in date.","zh-Hans":"一并安排住宿与游船。希望日期请选择入住日。","zh-Hant":"一併安排住宿與遊船。希望日期請選擇入住日。","ko":"숙박과 크루즈를 한 번에 준비해 드립니다. 희망일은 체크인 날짜를 선택해 주세요."},"B.B.S. でのダイニング・イベントとクルーズのセットです。ご宿泊の追加もご相談ください。":{"en":"A set of dining/events at B.B.S. and a cruise. Ask us about adding a stay.","zh-Hans":"B.B.S. 餐饮・活动与游船的套餐。如需追加住宿，欢迎咨询。","zh-Hant":"B.B.S. 餐飲・活動與遊船的套餐。如需追加住宿，歡迎諮詢。","ko":"B.B.S. 다이닝・이벤트와 크루즈 세트입니다. 숙박 추가도 상담해 주세요."},"お名前と、正しい形式のメールアドレスを入力してください。":{"en":"Please enter your name and a valid email address.","zh-Hans":"请输入姓名及正确格式的电子邮箱。","zh-Hant":"請輸入姓名及正確格式的電子郵件。","ko":"성함과 올바른 형식의 이메일 주소를 입력해 주세요."},"個人情報の取り扱いに同意のうえ、送信してください。":{"en":"Please agree to the privacy policy before sending.","zh-Hans":"请同意个人信息处理方式后再提交。","zh-Hant":"請同意個人資料處理方式後再送出。","ko":"개인정보 취급에 동의한 후 보내 주세요."},"お問い合わせありがとうございます（プレビュー版のため、実際の送信は行われません）。":{"en":"Thank you for your inquiry. (This is a preview, so nothing was actually sent.)","zh-Hans":"感谢您的咨询（此为预览版，不会实际发送）。","zh-Hant":"感謝您的諮詢（此為預覽版，不會實際送出）。","ko":"문의해 주셔서 감사합니다(미리보기 버전이므로 실제로 전송되지 않습니다)."}}
+;
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // hero slideshow
+  var sl=[].slice.call(document.querySelectorAll('.slides img')),dt=[].slice.call(document.querySelectorAll('.dots i')),si=0;
+  if(sl.length>1&&!reduce){
+    setInterval(function(){
+      sl[si].classList.remove('on');dt[si].classList.remove('on');
+      si=(si+1)%sl.length;
+      sl[si].classList.add('on');dt[si].classList.add('on');
+    },6500);
+  }
+  // reveal
+  if('IntersectionObserver' in window && !reduce){
+    document.documentElement.classList.add('js');
+    var els=[].slice.call(document.querySelectorAll('.rv')),vh=innerHeight;
+    els.forEach(function(el){ if(el.getBoundingClientRect().top>vh) el.classList.add('pre'); });
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target);} });
+    },{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }
+  // ---------- i18n ----------
+  var LANG='ja',FONTS={'zh-Hans':'Noto+Serif+SC:wght@500;600&family=Noto+Sans+SC:wght@400;500','zh-Hant':'Noto+Serif+TC:wght@500;600&family=Noto+Sans+TC:wght@400;500','ko':'Noto+Serif+KR:wght@500;600&family=Noto+Sans+KR:wght@400;500'},loaded={};
+  function t(ja){if(LANG==='ja')return ja;var e=I18N[ja];return e&&e[LANG]!=null?e[LANG]:ja;}
+  var ATTRS=['alt','placeholder','aria-label'];
+  function trNode(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode&&n.parentNode.nodeName;return p==='SCRIPT'||p==='STYLE'?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT}}),n;
+    while((n=w.nextNode())){
+      if(n._ja==null){var k=n.nodeValue.trim();if(!k||!I18N[k])continue;n._ja=n.nodeValue;n._k=k;}
+      var o=n._ja,v=t(n._k);n.nodeValue=o.replace(n._k,v);
+    }
+    var els=root.querySelectorAll?root.querySelectorAll('[alt],[placeholder],[aria-label]'):[];
+    [].forEach.call(els,function(el){ATTRS.forEach(function(a){
+      var key='_ja_'+a;if(!el.hasAttribute(a))return;
+      if(el[key]==null){var k=el.getAttribute(a);if(!I18N[k])return;el[key]=k;}
+      el.setAttribute(a,t(el[key]));
+    })});
+  }
+  function setT(el,ja){el.textContent=ja;trNode(el);}
+  var lb=document.getElementById('lang-btn'),ll=document.getElementById('lang-list'),lis=[].slice.call(ll.children);
+  function setLang(l,save){
+    if(!/^(ja|en|zh-Hans|zh-Hant|ko)$/.test(l))l='ja';
+    LANG=l;document.documentElement.lang=l;
+    if(FONTS[l]&&!loaded[l]){loaded[l]=1;var k=document.createElement('link');k.rel='stylesheet';k.href='https://fonts.googleapis.com/css2?family='+FONTS[l]+'&display=swap';document.head.appendChild(k);}
+    trNode(document.body);
+    lis.forEach(function(li){li.setAttribute('aria-selected',li.dataset.l===l?'true':'false')});
+    document.getElementById('lang-cur').textContent=lis.filter(function(li){return li.dataset.l===l})[0].textContent;
+    if(save){try{localStorage.setItem('hbc-lang',l)}catch(e){}}
+  }
+  function closeL(){ll.hidden=true;lb.setAttribute('aria-expanded','false');}
+  lb.addEventListener('click',function(e){e.stopPropagation();var open=ll.hidden;ll.hidden=!open;lb.setAttribute('aria-expanded',String(open));if(open)(ll.querySelector('[aria-selected=true]')||lis[0]).focus();});
+  lis.forEach(function(li,i){
+    li.addEventListener('click',function(){setLang(li.dataset.l,true);closeL();lb.focus();});
+    li.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();li.click();}
+      else if(e.key==='ArrowDown'){e.preventDefault();lis[(i+1)%lis.length].focus();}
+      else if(e.key==='ArrowUp'){e.preventDefault();lis[(i+lis.length-1)%lis.length].focus();}
+      else if(e.key==='Escape'){closeL();lb.focus();}
+    });
+  });
+  document.addEventListener('click',function(e){if(!ll.hidden&&!ll.contains(e.target))closeL();});
+  (function(){
+    var h=location.hash.slice(1).toLowerCase(),map={ja:'ja',en:'en',ko:'ko','zh-hans':'zh-Hans','zh-cn':'zh-Hans',zh:'zh-Hans','zh-hant':'zh-Hant','zh-tw':'zh-Hant'};
+    var l=map[h];
+    if(!l){try{l=localStorage.getItem('hbc-lang')}catch(e){}}
+    if(!l){var n=((navigator.languages&&navigator.languages[0])||navigator.language||'ja').toLowerCase();
+      l=/^ja/.test(n)?'ja':/^ko/.test(n)?'ko':/^zh-(tw|hk|mo|hant)/.test(n)?'zh-Hant':/^zh/.test(n)?'zh-Hans':/^en/.test(n)?'en':'ja';}
+    if(l!=='ja')setLang(l,false);
+  })();
+
+  // booking bar
+  var notes={
+    cruise:'ホテルにご宿泊でない方も、クルーズのみでご予約いただけます。',
+    stay:'ご宿泊とクルーズをまとめて手配します。ご希望日はチェックイン日をお選びください。',
+    bbs:'B.B.S. でのダイニング・イベントとクルーズのセットです。ご宿泊の追加もご相談ください。'
+  };
+  var plan='cruise',tabs=[].slice.call(document.querySelectorAll('.tabs button'));
+  tabs.forEach(function(b){
+    b.addEventListener('click',function(){
+      tabs.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+      plan=b.dataset.plan;setT(document.getElementById('q-note'),notes[plan]);
+    });
+  });
+  var today=new Date(),iso=new Date(today.getTime()-today.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+  document.getElementById('q-date').min=iso;document.getElementById('f-date').min=iso;
+  var f=document.getElementById('rf');
+  document.getElementById('q-go').addEventListener('click',function(){
+    f.plan.value=plan;f.date.value=document.getElementById('q-date').value;
+    f.time.value=document.getElementById('q-time').value;f.ppl.value=document.getElementById('q-ppl').value;
+    document.getElementById('reserve').scrollIntoView({behavior:reduce?'auto':'smooth'});
+    setTimeout(function(){f.nm.focus({preventScroll:true})},reduce?0:700);
+  });
+  [].slice.call(document.querySelectorAll('[data-pick]')).forEach(function(a){
+    a.addEventListener('click',function(){f.plan.value=a.dataset.pick;});
+  });
+  // form (preview: no data is sent)
+  var m=document.getElementById('msg');
+  function say(ja,err){m.hidden=false;setT(m,ja);m.classList.toggle('err',!!err);}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.nm.value.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.em.value.trim())){say('お名前と、正しい形式のメールアドレスを入力してください。',1);return;}
+    if(!f.ok.checked){say('個人情報の取り扱いに同意のうえ、送信してください。',1);return;}
+    say('お問い合わせありがとうございます（プレビュー版のため、実際の送信は行われません）。');
+  });
+})();
+</script>
+</body>
+</html>
